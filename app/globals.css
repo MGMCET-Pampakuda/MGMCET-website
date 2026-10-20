@@ -1,26 +1,344 @@
+/* =============================================================================
+   MGMCET Design System — globals.css
+   All design tokens live here. Components must reference tokens, never raw hex.
+   Re-skin the entire site by editing ONLY the @theme block below.
+   ============================================================================= */
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* -----------------------------------------------------------------------------
+   THEME TOKENS — Edit this block to re-skin for another institution
+   Example alternate theme (navy + orange) is commented at the bottom.
+   ----------------------------------------------------------------------------- */
+@theme {
+  /* --- Brand (Forest Green) --- */
+  --color-brand-950: #071f14;
+  --color-brand-900: #0f3d2b;
+  --color-brand-800: #14513a;
+  --color-brand-700: #1a6a4a;
+  --color-brand-600: #218a5e;
+  --color-brand-500: #2bab74;
+  --color-brand-200: #a8d8be;
+  --color-brand-100: #e4efe7;
+  --color-brand-50: #f2f7f3;
+
+  /* --- Accent (Gold) --- */
+  --color-accent-700: #8a6420;
+  --color-accent-600: #b98a2e;
+  --color-accent-500: #c9a24b;
+  --color-accent-400: #d9bb72;
+  --color-accent-100: #f6ebd0;
+  --color-accent-50: #fdf7ec;
+
+  /* --- Surface & Canvas --- */
+  --color-surface: #ffffff;
+  --color-canvas: #faf8f3;
+
+  /* --- Ink (text) --- */
+  --color-ink-900: #14201a;
+  --color-ink-700: #2a3a30;
+  --color-ink-600: #4a5a52;
+  --color-ink-400: #8a9a92;
+  --color-ink-200: #c8d4cc;
+
+  /* --- Border --- */
+  --color-border: #e3e8e4;
+  --color-border-strong: #c8d4cc;
+
+  /* --- Semantic states --- */
+  --color-success: #1a7a4a;
+  --color-success-bg: #e8f5ed;
+  --color-warning: #b98a2e;
+  --color-warning-bg: #fdf4e0;
+  --color-danger: #c0392b;
+  --color-danger-bg: #fdecea;
+  --color-info: #1a5a8a;
+  --color-info-bg: #e8f0f8;
+
+  /* --- Typography --- */
+  --font-heading: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-script: var(--font-caveat), "Caveat", cursive;
+
+  /* Fluid type scale using clamp() */
+  --text-display: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  --text-h1: clamp(2rem, 3.5vw + 0.5rem, 3.5rem);
+  --text-h2: clamp(1.625rem, 2.5vw + 0.25rem, 2.5rem);
+  --text-h3: clamp(1.25rem, 1.5vw + 0.25rem, 1.875rem);
+  --text-h4: clamp(1.0625rem, 1vw + 0.25rem, 1.375rem);
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.9375rem;
+  --text-caption: 0.8125rem;
+  --text-eyebrow: 0.75rem;
+
+  /* --- Radius --- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-card: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-pill: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px 0 rgb(20 32 26 / 0.06), 0 1px 2px -1px rgb(20 32 26 / 0.06);
+  --shadow-card: 0 4px 16px -2px rgb(20 32 26 / 0.08), 0 2px 6px -2px rgb(20 32 26 / 0.06);
+  --shadow-pop: 0 12px 40px -8px rgb(20 32 26 / 0.16), 0 4px 12px -4px rgb(20 32 26 / 0.08);
+  --shadow-header: 0 1px 0 0 var(--color-border), 0 2px 8px -2px rgb(20 32 26 / 0.06);
+
+  /* --- Section Spacing --- */
+  --space-section: clamp(3.5rem, 6vw, 6rem);
+  --space-section-sm: clamp(2rem, 4vw, 3.5rem);
+
+  /* --- Container --- */
+  --container-max: 80rem; /* 1280px */
+  --container-pad-x: clamp(1rem, 4vw, 2rem);
+
+  /* --- Z-Index Scale --- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-overlay: 20;
+  --z-dropdown: 30;
+  --z-sticky: 40;
+  --z-fixed: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+  --z-tooltip: 80;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =============================================================================
+   ALTERNATE THEME EXAMPLE — Navy + Orange (uncomment to apply)
+   Re-skin any institution in under 10 minutes. See docs/THEMING.md.
+   =============================================================================
+
+@theme {
+  --color-brand-950: #07111f;
+  --color-brand-900: #0d2b4a;
+  --color-brand-800: #0e3b6b;
+  --color-brand-700: #1050a0;
+  --color-brand-600: #1565c0;
+  --color-brand-500: #1976d2;
+  --color-brand-200: #90caf9;
+  --color-brand-100: #e3f2fd;
+  --color-brand-50:  #f0f8ff;
+
+  --color-accent-700: #bf360c;
+  --color-accent-600: #e64a19;
+  --color-accent-500: #ff5722;
+  --color-accent-400: #ff7043;
+  --color-accent-100: #fbe9e7;
+  --color-accent-50:  #fff3f0;
+
+  --color-canvas: #f8f9fc;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+*/
+
+/* -----------------------------------------------------------------------------
+   BASE LAYER — resets, accessibility, focus, scroll
+   ----------------------------------------------------------------------------- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    color: var(--color-ink-900);
+    background-color: var(--color-surface);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-ink-900);
+  }
+
+  /* Accessible focus ring — visible on keyboard, hidden on click */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-700);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Skip-to-content link (WCAG 2.4.1) */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: var(--z-toast);
+    padding: 0.5rem 1rem;
+    background-color: var(--color-brand-900);
+    color: #fff;
+    font-size: var(--text-body-sm);
+    font-weight: 600;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    text-decoration: none;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 2px;
+  }
+
+  /* Smooth image rendering */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Remove list styles for semantic lists in nav */
+  nav ul,
+  nav ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Link reset */
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* -----------------------------------------------------------------------------
+   COMPONENT LAYER — small set of semantic utility classes
+   Everything else via CVA variants inside components.
+   ----------------------------------------------------------------------------- */
+@layer components {
+  /* Eyebrow label — small uppercase gold text above section titles */
+  .eyebrow {
+    font-family: var(--font-heading);
+    font-size: var(--text-eyebrow);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-600);
+  }
+
+  /* Section title — fluid, heading font */
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-ink-900);
+  }
+
+  /* Prose content — for rich text areas (about, academics pages) */
+  .prose-college {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: 1.75;
+    color: var(--color-ink-600);
+  }
+
+  .prose-college h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    font-weight: 700;
+    color: var(--color-ink-900);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-college h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h4);
+    font-weight: 600;
+    color: var(--color-ink-900);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-college p {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-college ul,
+  .prose-college ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-college ul {
+    list-style: disc;
+  }
+
+  .prose-college ol {
+    list-style: decimal;
+  }
+
+  .prose-college li {
+    margin-bottom: 0.375rem;
+  }
+
+  .prose-college a {
+    color: var(--color-brand-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .prose-college a:hover {
+    color: var(--color-brand-600);
+  }
+
+  /* Container — max-width wrapper with responsive horizontal padding */
+  .container-site {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-pad-x);
+    padding-right: var(--container-pad-x);
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+  }
+
+  .section-spacing-sm {
+    padding-top: var(--space-section-sm);
+    padding-bottom: var(--space-section-sm);
+  }
 }
