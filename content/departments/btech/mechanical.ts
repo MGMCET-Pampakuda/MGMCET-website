@@ -8,61 +8,69 @@ export const mechanicalBtech: DepartmentDetail = {
   shortName: "Mechanical",
   intake: 60,
   duration: "4 Years",
-  image: "/images/departments/btech-mechanical.svg",
-  thumbnail: "/images/departments/btech-mechanical-thumb.svg",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-mechanical.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-mechanical.webp",
   href: "/departments/btech/mechanical",
-  tagline: "Engineering the Machines That Move the World",
+  tagline: "Designing, Analyzing, and Manufacturing the Physical World",
   overview:
-    "The B.Tech in Mechanical Engineering at MGMCET provides a strong foundation in thermodynamics, fluid mechanics, manufacturing technology, machine design, and materials science. Students develop problem-solving and design capabilities through hands-on workshop training, industry visits, and project work aligned with KTU curriculum.",
-  // TODO(content): replace with official vision from the department
+    "The Mechanical Engineering department stands as a strong pillar, right from the inception of MGM College of Engineering & Technology. With comprehensive workshop facilities and advanced thermal, fluid mechanics, CAD, and manufacturing laboratories, the department trains students to design, analyse, and build high-performance machinery, thermal power systems, and automotive systems.",
   vision:
-    "To produce competent mechanical engineers with analytical skills, innovative thinking, and commitment to sustainable development.",
-  // TODO(content): replace with official mission from the department
+    "To be a distinguished center of learning and innovation in Mechanical Engineering, producing globally competent professionals with strong ethical values.",
   mission:
-    "To provide quality mechanical engineering education through rigorous coursework, practical training, and industry engagement, fostering innovation and ethical practice.",
+    "Impart robust foundational knowledge in mechanical systems and manufacturing; provide intensive hands-on training on industrial equipment and modern design software; and foster socially responsible engineers capable of meeting industrial and sustainability challenges.",
   programOutcomes: [
-    // TODO(content): replace with official KTU Programme Outcomes
-    { code: "PO1", description: "Engineering Knowledge: Apply mathematics and sciences to mechanical engineering problems." },
-    { code: "PO2", description: "Problem Analysis: Identify and analyse complex mechanical engineering challenges." },
-    { code: "PO3", description: "Design/Development: Design mechanical components and systems." },
-    { code: "PO4", description: "Investigations: Conduct experiments and interpret engineering data." },
-    { code: "PO5", description: "Modern Tool Usage: Use CAD/CAM, simulation, and manufacturing tools." },
-    { code: "PO6", description: "Engineer and Society: Recognise societal impact of mechanical systems." },
-    { code: "PO7", description: "Environment: Design for energy efficiency and minimal environmental impact." },
-    { code: "PO8", description: "Ethics: Commit to professional ethics in engineering practice." },
-    { code: "PO9", description: "Team Work: Work effectively in multidisciplinary engineering teams." },
-    { code: "PO10", description: "Communication: Present engineering designs and reports professionally." },
-    { code: "PO11", description: "Project Management: Manage mechanical projects within constraints." },
-    { code: "PO12", description: "Life-long Learning: Adapt to evolving manufacturing and design technologies." },
+    { code: "PO1", description: "Apply knowledge of mathematics, science, and engineering fundamentals to mechanical systems." },
+    { code: "PO2", description: "Identify, formulate, and analyze complex mechanical and thermal engineering problems." },
+    { code: "PO3", description: "Design machine components, thermal systems, and manufacturing processes meeting safety and environmental standards." },
+    { code: "PO4", description: "Conduct investigations of fluid, thermal, and material properties through experimental testing." },
+    { code: "PO5", description: "Apply modern CAD/CAM, CFD, and FEA simulation software tools in design and production." },
+    { code: "PO6", description: "Assess societal, health, safety, and legal responsibilities in engineering practice." },
+    { code: "PO7", description: "Understand the impact of mechanical solutions on sustainability and energy conservation." },
+    { code: "PO8", description: "Apply professional ethics, integrity, and safety norms." },
+    { code: "PO9", description: "Function effectively as an individual and in multidisciplinary teams." },
+    { code: "PO10", description: "Communicate mechanical designs and technical reports effectively." },
+    { code: "PO11", description: "Demonstrate engineering management and project budgeting principles." },
+    { code: "PO12", description: "Recognize the need for and engage in lifelong professional learning." },
   ],
   labs: [
-    // TODO(content): replace with actual lab names
-    { name: "Manufacturing Technology Lab", description: "Lathes, milling machines, welding equipment, and CNC trainers." },
-    { name: "Fluid Mechanics Lab", description: "Pumps, turbines, and flow measurement apparatus." },
-    { name: "Thermodynamics Lab", description: "Engines, heat exchangers, and calorimeters." },
-    { name: "CAD/CAM Lab", description: "AutoCAD, SolidWorks, ANSYS, and CNC simulation software." },
-    { name: "Material Testing Lab", description: "Universal testing machine, hardness testers, and metallographic equipment." },
-  ],
-  faculty: [
-    // TODO(content): replace with actual HOD and faculty
     {
-      id: "btech-mech-hod",
-      name: "HOD Name", // TODO(content): replace with real name
-      designation: "Associate Professor & Head of Department",
-      qualification: "M.Tech, Ph.D (Pursuing)", // TODO(content): verify
-      isHOD: true,
-      image: "/images/faculty/placeholder-avatar.svg",
+      name: "Computer-Aided Design and Analysis Lab (MEL 201 & MEL 332)",
+      description: "Trains students in solid modelling, surface modelling, assembly modelling, and mechanism design. Equipped with CAD/CAM software, finite element analysis packages, and high-performance networked workstations.",
+    },
+    {
+      name: "Fluid Mechanics & Hydraulic Machines Lab (MEL 202)",
+      description: "Equipped with Pelton, Francis, and Kaplan turbines, Bernoulli's apparatus, Venturimeter, Orificemeter, Reciprocating, Centrifugal, Self-priming, and Gear pumps, and Hydraulic Ram for comprehensive fluid dynamics testing.",
+    },
+    {
+      name: "Thermal Engineering Lab (MEL 333)",
+      description: "Features a Steam Power Plant, 4-stroke 4-cylinder Petrol Engine Test Rig with Hydraulic dynamometer, Single Cylinder Diesel Test Rig with Rope brake dynamometer, Single Cylinder Diesel Test Rig with electrical dynamometer, and Twin-cylinder 4-stroke Diesel Engine.",
+    },
+    {
+      name: "Mechanical Systems & Heat Transfer Lab (MEL 334)",
+      description: "Equipped with Motorized Gyroscope, Universal Governor, Whirling of Shaft, Universal Vibration Apparatus, Thermal Conductivity apparatus, Composite Wall apparatus, Forced convection, AC Unit, Refrigeration Test Rig, and Air Compressor.",
+    },
+    {
+      name: "Mechanical Engineering Workshop (ESL 120)",
+      description: "Equipped with CNC Trainer Lathe, 18 precision lathes, 9 shaping machines, 9 slotting machines, universal milling, vertical drilling, smithy, foundry, carpentry, fitting, and welding sections.",
+    },
+    {
+      name: "Manufacturing Technology Lab 2",
+      description: "Equipped with Profile Projector, Tool Maker's Microscope, Thermocouple Calibration Apparatus, Strain Gauge, Surface Roughness Tester, and Autocollimator for advanced metrology and precision measurements.",
     },
   ],
+  faculty: [],
   curriculumLinks: [
-    { label: "KTU B.Tech Mechanical Engineering Syllabus", href: "https://ktu.edu.in/", isPdf: false },
+    { label: "APJ Abdul Kalam Technological University B.Tech Mechanical Engineering Syllabus", href: "https://ktu.edu.in/", isPdf: false },
   ],
-  achievements: [],
+  achievements: [
+    "Prof. Shajahan C.M (Dept. of Mechanical Engineering) awarded Indira Gandhi National Award for Best NSS Programme Officer.",
+    "Comprehensive on-campus industrial training programs and automotive technical exhibitions.",
+  ],
   placements: {
-    description: "Mechanical graduates have been placed in manufacturing, automotive, and core engineering companies.", // TODO(content): add real data
-    topRecruiters: [],
+    description: "Placements across heavy manufacturing, automotive fabrication, construction, and MEP engineering.",
+    topRecruiters: ["MRF", "Cherian Varkey Constructions (CVC)", "Aarbee Structures", "Armstech Engineers", "Mary Matha Constructions", "Luxon TATA"],
   },
   contact: {
-    email: "mechanical@mgmcet.ac.in", // TODO(content): verify
+    email: "mail@mgmcet.ac.in",
   },
 };

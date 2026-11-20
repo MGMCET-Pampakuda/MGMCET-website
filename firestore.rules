@@ -2,9 +2,13 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // Helper functions
+    function isAdmin() {
+      return request.auth != null;
+    }
+
     // Enquiries Collection:
-    // Allow public creation only if fields are valid and lengths are respected.
-    // Reading, updating, and deleting are completely forbidden from client apps.
+    // Allow public creation with valid fields; Allow authenticated admins to read, update status/notes, and delete.
     match /enquiries/{enquiryId} {
       allow create: if request.resource.data.keys().hasAll(['fullName', 'email', 'phone', 'district', 'message', 'createdAt', 'source'])
                     && request.resource.data.fullName is string
@@ -20,15 +24,63 @@ service cloud.firestore {
                     && request.resource.data.message is string
                     && request.resource.data.message.size() <= 2000
                     && request.resource.data.source is string
-                    && request.resource.data.source.size() <= 50
-                    && request.resource.data.createdAt is timestamp;
+                    && request.resource.data.source.size() <= 50;
 
-      allow read, update, delete: if false;
+      allow read, update, delete: if isAdmin();
     }
 
-    // Default deny all other collections
+    // News and Events Collection:
+    // Public read; Admin write, update, delete
+    match /news/{newsId} {
+      allow read: if true;
+      allow write, update, delete: if isAdmin();
+    }
+
+    // Announcements Collection:
+    // Public read; Admin write, update, delete
+    match /announcements/{announcementId} {
+      allow read: if true;
+      allow write, update, delete: if isAdmin();
+    }
+
+    // Faculty Directory Collection:
+    // Public read; Admin write, update, delete
+    match /faculty/{facultyId} {
+      allow read: if true;
+      allow write, update, delete: if isAdmin();
+    }
+
+    // Campus Photo Gallery Collection:
+    // Public read; Admin write, update, delete
+    match /gallery/{photoId} {
+      allow read: if true;
+      allow write, update, delete: if isAdmin();
+    }
+
+    // Job Applications & Recruitment Collection:
+    // Allow public submission of applications; Admin review, status updates, and delete
+    match /job_applications/{appId} {
+      allow create: if request.resource.data.keys().hasAll(['fullName', 'email', 'phone', 'roleApplied', 'category', 'highestQualification', 'createdAt'])
+                    && request.resource.data.fullName is string
+                    && request.resource.data.fullName.size() >= 2
+                    && request.resource.data.fullName.size() <= 120
+                    && request.resource.data.email is string
+                    && request.resource.data.phone is string
+                    && request.resource.data.roleApplied is string;
+
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Site Settings Collection:
+    // Public read; Admin write, update, delete
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write, update, delete: if isAdmin();
+    }
+
+    // Fallback rule
     match /{document=**} {
-      allow read, write: if false;
+      allow read, write: if isAdmin();
     }
   }
 }

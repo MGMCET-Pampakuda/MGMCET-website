@@ -6,10 +6,20 @@ import { buildMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "B.Tech Programmes | MGM College of Engineering and Technology",
+    title:
+      "B.Tech Degree Programs in Kerala | CSE, AI/ML, Cyber Security, Mechanical, ECE | MGMCET",
     description:
-      "Explore 4-year B.Tech undergraduate engineering degrees in AI & ML, Computer Science, Cyber Security, ECE, and Mechanical Engineering at MGMCET Pampakuda.",
+      "Explore 4-year KTU-affiliated B.Tech undergraduate engineering degrees in AI & ML, Computer Science, Cyber Security, ECE, and Mechanical Engineering at MGM College of Engineering and Technology (MGMCET), Pampakuda, Ernakulam. KEAM Code: MGE.",
     path: "/departments/btech",
+    keywords: [
+      "BTech Colleges in Kerala",
+      "KTU BTech Admissions 2025",
+      "BTech Computer Science Kerala",
+      "BTech AI and Data Science Ernakulam",
+      "KEAM College Code MGE",
+      "Top BTech Colleges in Kochi",
+      "MGMCET BTech Courses",
+    ],
   });
 }
 

@@ -38,7 +38,7 @@ export interface SiteConfig {
   contact: ContactInfo;
   social: SocialLinks;
   applyNowUrl: string;
-  prospectusUrl: string;
+  prospectusUrl?: string;
   scholarshipUrl?: string;
   tourVideoEmbedUrl?: string;
   announcements: AnnouncementItem[];

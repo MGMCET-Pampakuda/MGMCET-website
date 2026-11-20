@@ -91,7 +91,7 @@ export function HeroSlider({
             {slides.map((slide, index) => (
               <div
                 key={slide.id}
-                className="relative flex-[0_0_100%] min-w-0 h-[560px] sm:h-[620px] lg:h-[680px] flex items-center"
+                className="relative flex-[0_0_100%] min-w-0 h-[480px] sm:h-[560px] lg:h-[640px] flex items-center"
               >
                 {/* Full-bleed background photo */}
                 <div className="absolute inset-0 z-0">
@@ -117,7 +117,7 @@ export function HeroSlider({
 
                 {/* Content Container */}
                 <div className="relative z-raised max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                  <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
+                  <div className="max-w-2xl lg:max-w-3xl space-y-3 sm:space-y-6">
                     {/* Eyebrow */}
                     <p className="font-heading text-xs sm:text-eyebrow font-bold uppercase tracking-widest text-brand-100/90 flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent-500" aria-hidden="true" />
@@ -125,60 +125,74 @@ export function HeroSlider({
                     </p>
 
                     {/* Headline */}
-                    <h1 className="font-heading text-display font-bold text-white tracking-tight leading-[1.1] text-balance">
+                    <h1 className="font-heading text-display font-bold text-white tracking-tight leading-[1.15] text-balance">
                       <span>{slide.headline} </span>
                       {slide.headlineAccent && (
-                        <span className="font-script text-accent-400 font-normal italic inline-block transform -rotate-1 text-[1.15em] ml-1">
+                        <span className="font-script text-accent-400 font-normal italic inline text-[1.1em] ml-1">
                           {slide.headlineAccent}
                         </span>
                       )}
                     </h1>
 
                     {/* Description */}
-                    <p className="text-body sm:text-body-lg text-brand-100/90 leading-relaxed max-w-xl text-pretty">
+                    <p className="text-body-sm sm:text-body-lg text-brand-100/90 leading-relaxed max-w-xl text-pretty line-clamp-3 sm:line-clamp-none">
                       {slide.description}
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="pt-2 flex flex-wrap items-center gap-3.5 sm:gap-4">
+                    <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-4">
                       {slide.primaryCta && (
                         <SmartLink href={slide.primaryCta.href}>
                           <Button
                             variant="accent"
-                            size="lg"
+                            size="md"
                             pill
-                            className="font-bold tracking-wide shadow-md group text-ink-900"
+                            className="font-bold tracking-wide shadow-md group text-ink-900 text-xs sm:text-body-sm"
                           >
                             <span>{slide.primaryCta.label}</span>
-                            <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                            <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                           </Button>
                         </SmartLink>
                       )}
 
                       {slide.secondaryCta && (
                         slide.secondaryCta.isVideoModal ? (
-                          <Button
-                            variant="outline-light"
-                            size="lg"
-                            pill
-                            onClick={() => setIsVideoModalOpen(true)}
-                            className="font-medium tracking-wide group"
-                          >
-                            <span className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center mr-2 group-hover:bg-accent-500 group-hover:text-ink-900 transition-colors">
-                              <Play className="h-3 w-3 fill-current ml-0.5" aria-hidden="true" />
-                            </span>
-                            <span>{slide.secondaryCta.label}</span>
-                          </Button>
+                          site.tourVideoEmbedUrl ? (
+                            <Button
+                              variant="outline-light"
+                              size="md"
+                              pill
+                              onClick={() => setIsVideoModalOpen(true)}
+                              className="font-medium tracking-wide group text-xs sm:text-body-sm"
+                            >
+                              <span className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-white/20 flex items-center justify-center mr-1.5 sm:mr-2 group-hover:bg-accent-500 group-hover:text-ink-900 transition-colors">
+                                <Play className="h-2.5 w-2.5 sm:h-3 sm:w-3 fill-current ml-0.5" aria-hidden="true" />
+                              </span>
+                              <span>{slide.secondaryCta.label}</span>
+                            </Button>
+                          ) : slide.secondaryCta.href ? (
+                            <SmartLink href={slide.secondaryCta.href}>
+                              <Button
+                                variant="outline-light"
+                                size="md"
+                                pill
+                                className="font-medium tracking-wide text-xs sm:text-body-sm"
+                              >
+                                <span>{slide.secondaryCta.label}</span>
+                                <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 ml-1" aria-hidden="true" />
+                              </Button>
+                            </SmartLink>
+                          ) : null
                         ) : (
                           <SmartLink href={slide.secondaryCta.href}>
                             <Button
                               variant="outline-light"
-                              size="lg"
+                              size="md"
                               pill
-                              className="font-medium tracking-wide"
+                              className="font-medium tracking-wide text-xs sm:text-body-sm"
                             >
                               <span>{slide.secondaryCta.label}</span>
-                              <ArrowUpRight className="h-4 w-4 ml-1" aria-hidden="true" />
+                              <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4 ml-1" aria-hidden="true" />
                             </Button>
                           </SmartLink>
                         )
@@ -223,15 +237,15 @@ export function HeroSlider({
       </section>
 
       {/* Campus Tour Video Modal */}
-      <Modal
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        title="MGM CET Campus Tour"
-        description="Experience the academic ecosystem and modern infrastructure at Pampakuda"
-        size="xl"
-      >
-        <div className="relative aspect-video w-full rounded-lg overflow-hidden bg-brand-950 flex items-center justify-center">
-          {site.tourVideoEmbedUrl && (
+      {site.tourVideoEmbedUrl && (
+        <Modal
+          isOpen={isVideoModalOpen}
+          onClose={() => setIsVideoModalOpen(false)}
+          title="MGM CET Campus Tour"
+          description="Experience the academic ecosystem and modern infrastructure at Pampakuda"
+          size="xl"
+        >
+          <div className="relative aspect-video w-full rounded-lg overflow-hidden bg-brand-950 flex items-center justify-center">
             <iframe
               src={site.tourVideoEmbedUrl}
               title="MGMCET Campus Tour"
@@ -239,9 +253,9 @@ export function HeroSlider({
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          )}
-        </div>
-      </Modal>
+          </div>
+        </Modal>
+      )}
     </>
   );
 }

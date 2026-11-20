@@ -770,7 +770,7 @@ export function DesignSystemPage() {
                 { label: "Departments", href: "/departments" },
                 { label: "B.Tech AI & ML", current: true },
               ]}
-              image="/images/departments/btech-aiml.svg"
+              image="https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-aiml.webp"
             />
           </div>
         </section>

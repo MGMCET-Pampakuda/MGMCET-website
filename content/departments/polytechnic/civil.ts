@@ -1,22 +1,35 @@
 import type { DepartmentDetail } from "@/types";
 
-// TODO(content): replace all placeholder values with real department data
 export const civilPoly: DepartmentDetail = {
   id: "poly-civil",
   slug: "civil",
   level: "polytechnic",
   name: "Civil Engineering",
   shortName: "Civil",
-  intake: 30,
+  intake: 60,
   duration: "3 Years",
-  image: "/images/departments/poly-civil.svg",
-  thumbnail: "/images/departments/poly-civil-thumb.svg",
-  href: "/departments/polytechnic/civil",
-  overview: "The Diploma in Civil Engineering provides students with foundational technical skills aligned with industry and the SBTET/KTU polytechnic curriculum.",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/polytechnic-civil.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/polytechnic-civil.webp",
+  href: "/departments/polytechnic",
+  overview:
+    "The 3-Year Diploma in Civil Engineering offers rigorous practical education in surveying, construction materials, structural detailing, estimating and costing, and project site supervision, adhering to DTE Kerala curriculum.",
   programOutcomes: [],
-  labs: [{ name: "Civil Lab", description: "Equipped for practical coursework." }], // TODO(content): add real lab details
-  faculty: [{ id: "poly-civil-hod", name: "HOD Name", designation: "Lecturer & HOD", isHOD: true, image: "/images/faculty/placeholder-avatar.svg" }], // TODO(content): replace
-  curriculumLinks: [],
-  achievements: [],
-  contact: { email: "poly-civil@mgmcet.ac.in" }, // TODO(content): verify
+  labs: [
+    {
+      name: "Surveying & Levelling Lab",
+      description: "Equipped with total stations, theodolites, auto levels, and surveying accessories.",
+    },
+    {
+      name: "Civil Engineering Materials Lab",
+      description: "Testing equipment for compressive strength of concrete, tensile rebar testing, and soil classification.",
+    },
+  ],
+  faculty: [],
+  curriculumLinks: [
+    { label: "State Board of Technical Education (SBTET) Diploma Curriculum", href: "https://www.dtekerala.gov.in/", isPdf: false },
+  ],
+  achievements: [
+    "MGM Polytechnic Civil Department achieved 100% pass result in the final state board examinations.",
+  ],
+  contact: { email: "mail@mgmcet.ac.in" },
 };

@@ -1,17 +1,49 @@
 import type { GalleryItem } from "@/types";
 
 /**
- * Gallery content.
- * TODO(content): replace placeholder images with real photos.
- * Required dimensions: 800×600px (4:3 ratio) for grid items.
+ * Gallery content with real verified photos from mgmcet.ac.in.
  */
 export const gallery: GalleryItem[] = [
-  { id: "g-1", src: "/images/gallery/gallery-1.svg", alt: "Campus aerial view", caption: "MGMCET Campus", category: "campus" },
-  { id: "g-2", src: "/images/gallery/gallery-2.svg", alt: "Students in lab", caption: "Laboratory Session", category: "academics" },
-  { id: "g-3", src: "/images/gallery/gallery-3.svg", alt: "Onam celebrations", caption: "Onam Festival", category: "cultural" },
-  { id: "g-4", src: "/images/gallery/gallery-4.svg", alt: "Sports day event", caption: "Annual Sports Day", category: "sports" },
-  { id: "g-5", src: "/images/gallery/gallery-5.svg", alt: "Placement drive", caption: "Campus Recruitment", category: "placements" },
-  { id: "g-6", src: "/images/gallery/gallery-6.svg", alt: "Technical fest", caption: "Technical Fest", category: "events" },
-  { id: "g-7", src: "/images/gallery/gallery-7.svg", alt: "Cultural programme", caption: "Cultural Programme", category: "cultural" },
-  { id: "g-8", src: "/images/gallery/gallery-8.svg", alt: "Graduation day", caption: "Graduation Day", category: "events" },
+  {
+    id: "g-1",
+    src: "https://ik.imagekit.io/miwqceyia/mgmcet/gallery/2025/front-entrance.webp",
+    alt: "MGM College of Engineering and Technology front entrance and academic block",
+    caption: "MGMCET Campus Entrance",
+    category: "campus",
+  },
+  {
+    id: "g-2",
+    src: "https://ik.imagekit.io/miwqceyia/mgmcet/gallery/2025/campus-aerial.webp",
+    alt: "Panoramic aerial view of MGMCET campus at Pampakuda",
+    caption: "Aerial View of Campus",
+    category: "campus",
+  },
+  {
+    id: "g-3",
+    src: "https://ik.imagekit.io/miwqceyia/mgmcet/gallery/2025/arts-fest.webp",
+    alt: "Students performing during MGM Arts Fest cultural celebration",
+    caption: "MGM Arts Fest & Cultural Celebrations",
+    category: "cultural",
+  },
+  {
+    id: "g-4",
+    src: "https://ik.imagekit.io/miwqceyia/mgmcet/gallery/2025/autobahn-bharatbenz.webp",
+    alt: "Autobahn BharatBenz commercial vehicle demonstration on campus for engineering students",
+    caption: "Truck @ Campus — Autobahn BharatBenz Industrial Demo",
+    category: "academics",
+  },
+  {
+    id: "g-5",
+    src: "https://ik.imagekit.io/miwqceyia/mgmcet/gallery/2025/placement-orientation.webp",
+    alt: "Training and Placement Cell career orientation and aptitude workshop",
+    caption: "Placement & Career Orientation Session",
+    category: "placements",
+  },
+  {
+    id: "g-6",
+    src: "https://ik.imagekit.io/miwqceyia/mgmcet/events/other/hackathon-achievement.webp",
+    alt: "Students participating in vibrant campus community activities and hackathons at MGMCET",
+    caption: "Student Life, Innovation & Celebrations",
+    category: "events",
+  },
 ];

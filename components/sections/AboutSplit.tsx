@@ -36,7 +36,7 @@ export function AboutSplit({ about, className }: AboutSplitProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             {/* 1. Left Column: Image with Play Overlay & Cursive Caption */}
             <div className="lg:col-span-4 flex flex-col justify-center">
-              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[320px] rounded-2xl overflow-hidden shadow-card border border-border group">
+              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[240px] sm:min-h-[320px] rounded-2xl overflow-hidden shadow-card border border-border group">
                 <Image
                   src={about.image}
                   alt={about.imageAlt}
@@ -50,15 +50,17 @@ export function AboutSplit({ about, className }: AboutSplitProps) {
                   aria-hidden="true"
                 />
 
-                {/* Center Play Button Overlay */}
-                <button
-                  type="button"
-                  onClick={() => setIsVideoModalOpen(true)}
-                  aria-label="Watch college overview video"
-                  className="absolute inset-0 m-auto h-14 w-14 rounded-full bg-white/90 text-brand-900 shadow-pop flex items-center justify-center hover:scale-110 active:scale-95 transition-all focus-visible:outline-2 focus-visible:outline-accent-500 cursor-pointer"
-                >
-                  <Play className="h-6 w-6 fill-current ml-1 text-brand-700" aria-hidden="true" />
-                </button>
+                {/* Center Play Button Overlay (only if tour video is available) */}
+                {site.tourVideoEmbedUrl && (
+                  <button
+                    type="button"
+                    onClick={() => setIsVideoModalOpen(true)}
+                    aria-label="Watch college overview video"
+                    className="absolute inset-0 m-auto h-14 w-14 rounded-full bg-white/90 text-brand-900 shadow-pop flex items-center justify-center hover:scale-110 active:scale-95 transition-all focus-visible:outline-2 focus-visible:outline-accent-500 cursor-pointer"
+                  >
+                    <Play className="h-6 w-6 fill-current ml-1 text-brand-700" aria-hidden="true" />
+                  </button>
+                )}
 
                 {/* Bottom Left Script Caption */}
                 {about.imageCaption && (
@@ -101,7 +103,7 @@ export function AboutSplit({ about, className }: AboutSplitProps) {
             <div className="lg:col-span-4 flex flex-col justify-center gap-4 sm:gap-5">
               {/* Vision Card */}
               {about.vision && (
-                <div className="p-6 rounded-xl bg-brand-50/70 border border-brand-100/90 space-y-2.5 transition-all hover:bg-brand-50 hover:shadow-sm">
+                <div className="p-4 sm:p-6 rounded-xl bg-brand-50/70 border border-brand-100/90 space-y-2.5 transition-all hover:bg-brand-50 hover:shadow-sm">
                   <div className="flex items-center gap-3">
                     <IconBox
                       variant="surface"
@@ -123,7 +125,7 @@ export function AboutSplit({ about, className }: AboutSplitProps) {
 
               {/* Mission Card */}
               {about.mission && (
-                <div className="p-6 rounded-xl bg-brand-50/70 border border-brand-100/90 space-y-2.5 transition-all hover:bg-brand-50 hover:shadow-sm">
+                <div className="p-4 sm:p-6 rounded-xl bg-brand-50/70 border border-brand-100/90 space-y-2.5 transition-all hover:bg-brand-50 hover:shadow-sm">
                   <div className="flex items-center gap-3">
                     <IconBox
                       variant="surface"
@@ -148,15 +150,15 @@ export function AboutSplit({ about, className }: AboutSplitProps) {
       </section>
 
       {/* Overview Video Modal */}
-      <Modal
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        title="About MGMCET"
-        description="Empowering minds and shaping tomorrow through quality technical education"
-        size="xl"
-      >
-        <div className="relative aspect-video w-full rounded-lg overflow-hidden bg-brand-950 flex items-center justify-center">
-          {site.tourVideoEmbedUrl && (
+      {site.tourVideoEmbedUrl && (
+        <Modal
+          isOpen={isVideoModalOpen}
+          onClose={() => setIsVideoModalOpen(false)}
+          title="About MGMCET"
+          description="Empowering minds and shaping tomorrow through quality technical education"
+          size="xl"
+        >
+          <div className="relative aspect-video w-full rounded-lg overflow-hidden bg-brand-950 flex items-center justify-center">
             <iframe
               src={site.tourVideoEmbedUrl}
               title="MGMCET Overview"
@@ -164,9 +166,9 @@ export function AboutSplit({ about, className }: AboutSplitProps) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          )}
-        </div>
-      </Modal>
+          </div>
+        </Modal>
+      )}
     </>
   );
 }

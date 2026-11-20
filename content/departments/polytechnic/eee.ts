@@ -1,22 +1,29 @@
 import type { DepartmentDetail } from "@/types";
 
-// TODO(content): replace all placeholder values with real department data
 export const eeePoly: DepartmentDetail = {
   id: "poly-eee",
   slug: "eee",
   level: "polytechnic",
-  name: "Electrical and Electronics Engineering",
+  name: "Electrical & Electronics Engineering",
   shortName: "EEE",
-  intake: 30,
+  intake: 60,
   duration: "3 Years",
-  image: "/images/departments/poly-eee.svg",
-  thumbnail: "/images/departments/poly-eee-thumb.svg",
-  href: "/departments/polytechnic/eee",
-  overview: "The Diploma in Electrical and Electronics Engineering provides students with foundational technical skills aligned with industry and the SBTET/KTU polytechnic curriculum.",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/polytechnic-eee.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/polytechnic-eee.webp",
+  href: "/departments/polytechnic",
+  overview:
+    "The 3-Year Diploma in Electrical & Electronics Engineering focuses on electrical machines, power distribution, domestic and industrial wiring, switchgear, control panels, and basic electronic controllers.",
   programOutcomes: [],
-  labs: [{ name: "EEE Lab", description: "Equipped for practical coursework." }], // TODO(content): add real lab details
-  faculty: [{ id: "poly-eee-hod", name: "HOD Name", designation: "Lecturer & HOD", isHOD: true, image: "/images/faculty/placeholder-avatar.svg" }], // TODO(content): replace
-  curriculumLinks: [],
+  labs: [
+    {
+      name: "Electrical Machines Lab",
+      description: "Equipped with AC and DC motors, generators, transformers, and electrical test benches.",
+    },
+  ],
+  faculty: [],
+  curriculumLinks: [
+    { label: "State Board of Technical Education (SBTET) Diploma Curriculum", href: "https://www.dtekerala.gov.in/", isPdf: false },
+  ],
   achievements: [],
-  contact: { email: "poly-eee@mgmcet.ac.in" }, // TODO(content): verify
+  contact: { email: "mail@mgmcet.ac.in" },
 };

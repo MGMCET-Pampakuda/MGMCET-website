@@ -21,3 +21,18 @@ export interface ContactFormData {
 }
 
 export type FormStatus = "idle" | "loading" | "success" | "error" | "unconfigured";
+
+export type EnquiryStatus = "new" | "contacted" | "in-review" | "resolved" | "archived";
+
+export interface EnquirySubmission {
+  id: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  district: string;
+  message: string;
+  source: string;
+  createdAt: string;
+  status: EnquiryStatus;
+  notes?: string;
+}

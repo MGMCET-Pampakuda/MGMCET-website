@@ -6,10 +6,19 @@ import { buildMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "M.Tech Programmes | MGM College of Engineering and Technology",
+    title:
+      "M.Tech Postgraduate Engineering Programs | KTU Affiliated | MGMCET Pampakuda",
     description:
-      "Two-year postgraduate M.Tech engineering programmes in Industrial Instrumentation & Control and Structural Engineering & Construction Management at MGMCET Pampakuda.",
+      "Two-year advanced research-led Master of Technology (M.Tech) engineering programs in Structural Engineering & Construction Management and Industrial Instrumentation & Control at MGMCET Pampakuda, affiliated to KTU.",
     path: "/departments/mtech",
+    keywords: [
+      "MTech Colleges in Kerala",
+      "KTU MTech Admissions",
+      "Structural Engineering MTech Kerala",
+      "Industrial Instrumentation Control",
+      "PG Engineering Kerala",
+      "MGMCET MTech Programs",
+    ],
   });
 }
 

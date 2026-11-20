@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/cn";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center font-heading font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700 disabled:pointer-events-none disabled:opacity-50 cursor-pointer select-none",
+  "inline-flex items-center justify-center font-heading font-medium whitespace-nowrap shrink-0 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700 disabled:pointer-events-none disabled:opacity-50 cursor-pointer select-none",
   {
     variants: {
       variant: {
@@ -23,10 +23,10 @@ export const buttonVariants = cva(
           "bg-brand-950 text-white hover:bg-brand-900 active:bg-brand-800 shadow-sm",
       },
       size: {
-        sm: "h-9 px-3.5 text-body-sm rounded-md gap-1.5",
-        md: "h-11 px-5 text-body rounded-md gap-2",
-        lg: "h-12 px-6 text-body-lg rounded-md gap-2.5",
-        icon: "h-10 w-10 p-0 rounded-md shrink-0",
+        sm: "h-8 sm:h-9 px-3 sm:px-3.5 text-xs sm:text-body-sm rounded-md gap-1.5",
+        md: "h-9 sm:h-10 px-3.5 sm:px-5 text-xs sm:text-body-sm rounded-md gap-2",
+        lg: "h-10 sm:h-11 px-4.5 sm:px-6 text-xs sm:text-body rounded-md gap-2 sm:gap-2.5",
+        icon: "h-9 w-9 sm:h-10 sm:w-10 p-0 rounded-md shrink-0",
       },
       pill: {
         true: "rounded-pill",

@@ -8,11 +8,21 @@ const pageExtensions = showDesignSystem
 
 const nextConfig: NextConfig = {
   output: "export",
-  images: { unoptimized: true },
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+        pathname: "/**",
+      },
+    ],
+  },
   trailingSlash: true,
   pageExtensions,
   experimental: {
     agentFeedback: true,
+    agentUpgrade: "security",
   },
   turbopack: {
     rules: {

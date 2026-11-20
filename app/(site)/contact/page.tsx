@@ -4,10 +4,18 @@ import { ContactPage } from "@/components/templates/ContactPage";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Us | MGM College of Engineering and Technology",
+  title:
+    "Contact MGMCET | Admissions Helpline, Campus Address & Location Map | Pampakuda",
   description:
-    "Get in touch with MGM College of Engineering and Technology, Pampakuda, Ernakulam. Admissions helpline, contact addresses, phone numbers, and directions.",
+    "Get in touch with MGM College of Engineering and Technology (MGMCET), Pampakuda, Memury P.O, Muvattupuzha, Ernakulam District, Kerala 686667. Phone: +91-9946485111, +91-7902995111. Email: mail@mgmcet.ac.in.",
   path: "/contact",
+  keywords: [
+    "Contact MGMCET",
+    "MGMCET Pampakuda Phone Number",
+    "Engineering College Address Muvattupuzha",
+    "MGMCET Admissions Helpline",
+    "How to reach MGMCET Pampakuda",
+  ],
 });
 
 export default function ContactRoute() {

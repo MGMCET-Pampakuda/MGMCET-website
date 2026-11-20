@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DetailPage } from "@/components/templates/DetailPage";
+import { UnderDevelopment } from "@/components/shared";
 import { campusLife } from "@/content/campus-life";
 import { SmartLink } from "@/components/ui/Link";
 import { buildMetadata } from "@/lib/seo";
@@ -12,7 +13,12 @@ interface PageProps {
 
 export function generateStaticParams() {
   return campusLife.features
-    .filter((f) => !f.isExternal)
+    .filter(
+      (f) =>
+        !f.isExternal &&
+        f.slug !== "associations-and-clubs" &&
+        f.slug !== "women-cell"
+    )
     .map((f) => ({ slug: f.slug }));
 }
 
@@ -22,10 +28,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!feature) return { title: "Campus Life | MGMCET" };
 
   return buildMetadata({
-    title: `${feature.title} | Campus Life | MGMCET`,
-    description: feature.description,
+    title: `${feature.title} | Student Facilities & Amenities | MGMCET Pampakuda`,
+    description: `${feature.title} at MGM College of Engineering and Technology (MGMCET), Pampakuda, Ernakulam: ${feature.description}`,
     path: `/campus-life/${slug}`,
     image: feature.image,
+    keywords: [
+      `MGMCET ${feature.title}`,
+      `${feature.title} Engineering College Kerala`,
+      "Campus Life Pampakuda",
+      "MGMCET Student Facilities",
+    ],
   });
 }
 
@@ -33,12 +45,19 @@ export default async function CampusLifeDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const feature = campusLife.features.find((f) => f.slug === slug);
 
-  if (!feature || feature.isExternal) {
+  if (
+    !feature ||
+    feature.isExternal ||
+    slug === "associations-and-clubs" ||
+    slug === "women-cell"
+  ) {
     notFound();
   }
 
   const details = campusLife.facilityDetails[slug];
 
+
+  const isNoImagePage = slug === "arts-club" || slug === "sports-club" || slug === "nss";
 
   return (
     <DetailPage
@@ -50,58 +69,65 @@ export default async function CampusLifeDetailPage({ params }: PageProps) {
         { label: "Campus Life", href: "/campus-life" },
         { label: feature.title, href: `/campus-life/${slug}` },
       ]}
-      featuredImage={feature.image}
+      featuredImage={isNoImagePage ? undefined : feature.image}
       backLink={{ label: "All Campus Facilities & Clubs", href: "/campus-life" }}
     >
-      <div className="space-y-6">
-        {details?.body.map((para, idx) => (
-          <p key={idx} className="text-body text-ink-700 leading-relaxed">
-            {para}
-          </p>
-        ))}
-
-        {details?.highlights && details.highlights.length > 0 && (
-          <div className="my-8 p-6 rounded-2xl bg-brand-50/70 border border-brand-100 space-y-4">
-            <h3 className="font-heading font-bold text-h4 text-brand-900">
-              Key Features &amp; Infrastructure
-            </h3>
-            <ul className="space-y-2.5">
-              {details.highlights.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 text-body-sm text-ink-700">
-                  <span className="text-accent-600 font-bold mt-0.5">&bull;</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {details?.contactInfo && (
-          <div className="pt-4 border-t border-border">
-            <h4 className="font-heading font-bold text-ink-900 text-body mb-1">
-              Contact &amp; Administrative Information
-            </h4>
-            <p className="text-body-sm text-ink-600">
-              {details.contactInfo}
+      {slug === "arts-club" || slug === "nss" || slug === "sports-club" ? (
+        <UnderDevelopment
+          title={`${feature.title} — Page Under Development`}
+          subtitle="We are currently refreshing our event documentation, achievements, and upcoming schedule for this club. We will be back soon!"
+        />
+      ) : (
+        <div className="space-y-6">
+          {details?.body.map((para, idx) => (
+            <p key={idx} className="text-body text-ink-700 leading-relaxed">
+              {para}
             </p>
-          </div>
-        )}
+          ))}
 
-        <div className="pt-6 flex flex-wrap gap-4">
-          <SmartLink
-            href="/admissions"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent-500 hover:bg-accent-600 text-white font-heading font-semibold text-body-sm transition-colors shadow-xs"
-          >
-            Apply for Admission
-          </SmartLink>
-          <SmartLink
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-900 hover:bg-brand-800 text-white font-heading font-semibold text-body-sm transition-colors"
-          >
-            Contact Campus Helpdesk
-          </SmartLink>
+          {details?.highlights && details.highlights.length > 0 && (
+            <div className="my-8 p-6 rounded-2xl bg-brand-50/70 border border-brand-100 space-y-4">
+              <h3 className="font-heading font-bold text-h4 text-brand-900">
+                Key Features &amp; Infrastructure
+              </h3>
+              <ul className="space-y-2.5">
+                {details.highlights.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-body-sm text-ink-700">
+                    <span className="text-accent-600 font-bold mt-0.5">&bull;</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {details?.contactInfo && (
+            <div className="pt-4 border-t border-border">
+              <h4 className="font-heading font-bold text-ink-900 text-body mb-1">
+                Contact &amp; Administrative Information
+              </h4>
+              <p className="text-body-sm text-ink-600">
+                {details.contactInfo}
+              </p>
+            </div>
+          )}
+
+          <div className="pt-6 flex flex-wrap gap-4">
+            <SmartLink
+              href="/admissions"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent-500 hover:bg-accent-600 text-white font-heading font-semibold text-body-sm transition-colors shadow-xs"
+            >
+              Apply for Admission
+            </SmartLink>
+            <SmartLink
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-900 hover:bg-brand-800 text-white font-heading font-semibold text-body-sm transition-colors"
+            >
+              Contact Campus Helpdesk
+            </SmartLink>
+          </div>
         </div>
-      </div>
+      )}
     </DetailPage>
   );
 }

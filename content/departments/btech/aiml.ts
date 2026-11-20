@@ -8,63 +8,65 @@ export const aimlBtech: DepartmentDetail = {
   shortName: "AI & ML",
   intake: 60,
   duration: "4 Years",
-  image: "/images/departments/btech-aiml.svg",
-  thumbnail: "/images/departments/btech-aiml-thumb.svg",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-aiml.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-aiml.webp",
   href: "/departments/btech/aiml",
   tagline: "Building Intelligent Systems for Tomorrow",
   overview:
-    "The B.Tech in Artificial Intelligence & Machine Learning programme equips students with strong foundations in AI algorithms, deep learning, data science, computer vision, and natural language processing. Students gain hands-on exposure through well-equipped labs, industry collaborations, and real-world project work aligned with the KTU curriculum.",
-  // TODO(content): replace with official vision statement from the department
+    "Artificial Intelligence and Machine Learning comprise the science that studies and develops methods of making computers more intelligent and capable of learning from data without explicit programming. The focus of this course is on AI fundamentals, alongside Machine Learning techniques for data analysis, pattern recognition, predictive modeling, and designing intelligent systems. The primary objective is to introduce the basic principles, algorithms, and applications of both AI and ML, preparing students to create innovative, data-driven solutions in a rapidly evolving field.",
   vision:
-    "To emerge as a center of excellence in Artificial Intelligence and Machine Learning education and research, producing globally competent graduates.",
-  // TODO(content): replace with official mission from the department
+    "To emerge as a Center of Excellence in Engineering, Technology and Management by imparting quality education, focussing on empowerment and innovation.",
   mission:
-    "To provide quality education in AI and ML through innovative teaching, industry collaboration, and ethical technology practices.",
+    "Impart quality professional education for total upliftment of the society; create a congenial academic ambience that kindles innovative thinking and research; and mould competent professionals who are socially committed and responsible citizens.",
   programOutcomes: [
-    // TODO(content): replace with official KTU Programme Outcomes for this department
-    { code: "PO1", description: "Engineering Knowledge: Apply knowledge of mathematics, science, and engineering." },
-    { code: "PO2", description: "Problem Analysis: Identify, formulate, and analyse complex engineering problems." },
-    { code: "PO3", description: "Design/Development of Solutions: Design solutions for complex problems." },
-    { code: "PO4", description: "Conduct Investigations of Complex Problems: Use research-based knowledge and methods." },
-    { code: "PO5", description: "Modern Tool Usage: Create, select, and apply appropriate techniques and tools." },
-    { code: "PO6", description: "The Engineer and Society: Apply reasoning informed by contextual knowledge." },
-    { code: "PO7", description: "Environment and Sustainability: Understand the impact of engineering solutions." },
-    { code: "PO8", description: "Ethics: Apply ethical principles and commit to professional ethics." },
-    { code: "PO9", description: "Individual and Team Work: Function effectively in diverse teams." },
-    { code: "PO10", description: "Communication: Communicate effectively with engineering community and society." },
-    { code: "PO11", description: "Project Management and Finance: Demonstrate knowledge and understanding of engineering management." },
-    { code: "PO12", description: "Life-long Learning: Recognize the need for and engage in lifelong learning." },
+    { code: "PO1", description: "Engineering Knowledge: Apply knowledge of mathematics, science, engineering fundamentals, and engineering specialization." },
+    { code: "PO2", description: "Problem Analysis: Identify, formulate, review research literature, and analyze complex engineering problems." },
+    { code: "PO3", description: "Design/Development of Solutions: Design solutions for complex engineering problems and system components." },
+    { code: "PO4", description: "Conduct Investigations of Complex Problems: Use research-based knowledge and methods including design of experiments and data interpretation." },
+    { code: "PO5", description: "Modern Tool Usage: Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools." },
+    { code: "PO6", description: "The Engineer and Society: Apply reasoning informed by contextual knowledge to assess societal, health, safety, and legal issues." },
+    { code: "PO7", description: "Environment and Sustainability: Understand the impact of professional engineering solutions in societal and environmental contexts." },
+    { code: "PO8", description: "Ethics: Apply ethical principles and commit to professional ethics, responsibilities, and norms of engineering practice." },
+    { code: "PO9", description: "Individual and Team Work: Function effectively as an individual, and as a member or leader in diverse teams and multidisciplinary settings." },
+    { code: "PO10", description: "Communication: Communicate effectively on complex engineering activities with the engineering community and society." },
+    { code: "PO11", description: "Project Management and Finance: Demonstrate knowledge and understanding of engineering and management principles." },
+    { code: "PO12", description: "Life-long Learning: Recognize the need for, and have the preparation and ability to engage in independent and lifelong learning." },
   ],
   labs: [
-    // TODO(content): replace with actual lab names and descriptions from the department
-    { name: "AI & Deep Learning Lab", description: "Equipped with high-performance GPU systems for deep learning experiments." },
-    { name: "Data Science Lab", description: "Workstations with Python, R, and analytics tools for data science projects." },
-    { name: "Computer Vision Lab", description: "Cameras and processing units for image and video analysis." },
-  ],
-  faculty: [
-    // TODO(content): replace with actual HOD and faculty names, qualifications, and images
     {
-      id: "btech-aiml-hod",
-      name: "HOD Name", // TODO(content): replace with real name
-      designation: "Associate Professor & Head of Department",
-      qualification: "M.Tech, Ph.D (Pursuing)", // TODO(content): verify
-      isHOD: true,
-      image: "/images/faculty/placeholder-avatar.svg",
+      name: "AI & Machine Learning Computing Lab",
+      description:
+        "Equipped with modern high-performance desktop systems featuring Intel Core i5 processors, 8 GB RAM, high-speed SSD storage, and LED displays. Connected to high-speed Gigabit LAN with continuous campus internet access and centralized UPS power backup. The lab supports dual-boot environments with Ubuntu Linux and Windows, pre-installed with Python, TensorFlow, PyTorch, Scikit-learn, and essential data science frameworks.",
+    },
+    {
+      name: "Programming & Data Structures Lab",
+      description:
+        "Modern computer laboratory powered by Intel Core i5 workstations with 8 GB RAM and high-speed network connectivity. Provides complete software suites including GCC/G++, Python, Java Development Kit, modern IDEs, and debugging tools running on both Linux and Windows operating systems.",
+    },
+    {
+      name: "Data Analytics & Algorithm Development Lab",
+      description:
+        "Dedicated computational facility equipped with Intel Core i5 systems and 8 GB RAM connected over Gigabit Ethernet. Configured with database engines, scientific computing libraries, data visualization tools, and statistical analysis packages for hands-on algorithm design and experimental data processing.",
+    },
+    {
+      name: "Advanced Computing & Project Lab",
+      description:
+        "Specialized lab environment featuring Intel Core i5 processors, 8 GB RAM, and dual-boot systems designed for student project development, deep learning experimentation, intelligent agent modelling, and capstone engineering solutions.",
     },
   ],
+  faculty: [],
   curriculumLinks: [
-    // TODO(content): add real KTU syllabus PDF links for each semester
-    { label: "KTU B.Tech AI&ML Syllabus (Scheme 2019)", href: "https://ktu.edu.in/", isPdf: false },
+    { label: "APJ Abdul Kalam Technological University Curriculum & Syllabi", href: "https://ktu.edu.in/", isPdf: false },
   ],
   achievements: [
-    // TODO(content): add real achievements, paper presentations, hackathon wins
+    "Active student participation in national hackathons and robotics challenges.",
+    "Specialized technical workshops conducted on Machine Learning and Deep Learning.",
   ],
   placements: {
-    description: "Students from AI&ML have been placed in leading technology companies.", // TODO(content): add real placement data
-    topRecruiters: [], // TODO(content): add real recruiters
+    description: "Career avenues span AI Solutions Architect, Machine Learning Engineer, MLOps Engineer, Computer Vision Engineer, NLP Scientist, AI Research Scientist, Data Scientist, and Robotics Engineer.",
+    topRecruiters: ["TCS", "Infosys", "Wipro Technologies", "Cognizant (CTS)", "Mphasis", "UST Global", "IBS Software", "Poornam Infovision", "VVDN Technologies", "Comstream Technologies"],
   },
   contact: {
-    // TODO(content): add real HOD email and phone for this department
-    email: "aiml@mgmcet.ac.in",
+    email: "mail@mgmcet.ac.in",
   },
 };

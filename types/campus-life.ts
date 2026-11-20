@@ -18,6 +18,36 @@ export interface CampusLifeFeature {
   content?: string;
 }
 
+export type ClubCategory = "club" | "association";
+
+export interface WomenCellEvent {
+  id: string;
+  title: string;
+  date: string;
+  venue: string;
+  welcomeSpeech: string;
+  voteOfThanks: string;
+  summary: string;
+  iconName?: string;
+  category?: string;
+}
+
+export interface ClubAssociationItem {
+  id: string;
+  name: string;
+  category: ClubCategory;
+  brief: string;
+  chairperson: string;
+  staffInCharge: string;
+  viceChairperson?: string;
+  tagline?: string;
+  iconName?: string;
+  href?: string;
+  isExternal?: boolean;
+  order?: number;
+  status?: "Active" | "Inactive";
+}
+
 export interface ClubItem {
   name: string;
   description?: string;

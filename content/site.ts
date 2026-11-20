@@ -12,36 +12,29 @@ export const site: SiteConfig = {
   collegeCode: "MGE",
   foundedYear: 1994,
   contact: {
-    address: "Pampakuda",
+    address: "Pampakuda, Memury P.O, Muvattupuzha",
     district: "Ernakulam (Dist.)",
     state: "Kerala",
     pincode: "686667",
     phones: ["9946485111", "7902995111"],
-    email: "principal@mgmcet.ac.in", // TODO(content): verify email address
+    email: "mail@mgmcet.ac.in",
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.580213190807!2d76.55018697576579!3d9.907998974288006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07dfb91811a2f1%3A0xe54b9d038a8e104!2sMGM%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin",
   },
-  social: {
-    facebook: "https://www.facebook.com/mgmcetkerala", // TODO(content): verify URL
-    instagram: "https://www.instagram.com/mgmcetkerala", // TODO(content): verify URL
-    youtube: "https://www.youtube.com/@mgmcet", // TODO(content): verify URL
-    linkedin: "https://www.linkedin.com/school/mgmcet", // TODO(content): verify URL
-  },
-  // TODO(content): replace with the real Google Form "Apply Now" URL from the original site
-  applyNowUrl: "https://forms.google.com/mgmcet-admission",
-  // TODO(content): replace with actual prospectus PDF URL or path
-  prospectusUrl: "/documents/prospectus.pdf",
-  // TODO(content): replace with real scholarship URL
-  scholarshipUrl: "https://vidyamrutham.mgmcet.ac.in",
-  // TODO(content): replace with real YouTube embed URL for campus tour
-  tourVideoEmbedUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1",
+  social: {},
+  applyNowUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSdt4vzL9gtj5RyM0UroUlMGtxZOPNRvN5RI1mWkjdJofHN9LQ/viewform",
+  prospectusUrl: undefined,
+  scholarshipUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSdt4vzL9gtj5RyM0UroUlMGtxZOPNRvN5RI1mWkjdJofHN9LQ/viewform",
+  tourVideoEmbedUrl: undefined,
   announcements: [
     {
       id: "admission-2026",
-      text: "Admissions Open for 2026 – Apply Now!",
+      text: "Admissions Open for 2026, Apply Now!",
       linkText: "Apply Now",
       linkHref:
-        "https://forms.google.com/mgmcet-admission", // TODO(content): replace with real form URL
+        "https://docs.google.com/forms/d/e/1FAIpQLSdt4vzL9gtj5RyM0UroUlMGtxZOPNRvN5RI1mWkjdJofHN9LQ/viewform",
       isExternal: true,
       active: true,
     },
@@ -50,10 +43,10 @@ export const site: SiteConfig = {
       text: "Mammooty's Vidyamrutham Scholarship is live now!",
       linkText: "Click Here to Apply",
       linkHref:
-        "https://vidyamrutham.mgmcet.ac.in", // TODO(content): replace with real scholarship URL
+        "https://docs.google.com/forms/d/e/1FAIpQLSdt4vzL9gtj5RyM0UroUlMGtxZOPNRvN5RI1mWkjdJofHN9LQ/viewform",
       isExternal: true,
       active: true,
     },
   ],
-  credits: "© {year} MGM College of Engineering and Technology. All rights reserved.",
+  credits: "© 2025 MGM College of Engineering and Technology. All rights reserved.",
 };

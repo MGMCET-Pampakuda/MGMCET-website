@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { BASE_URL } from "@/lib/constants";
-import { allDepartmentDetails } from "@/content/departments";
+import { btechDepartments } from "@/content/departments";
 import { news } from "@/content/news";
 import { campusLife } from "@/content/campus-life";
 
@@ -171,7 +171,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${BASE_URL}/campus-life`,
       lastModified: new Date(),
       changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/campus-life/associations-and-clubs`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/campus-life/women-cell`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
     },
     {
       url: `${BASE_URL}/news-events`,
@@ -181,8 +193,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic Department Detail Pages (15 departments)
-  const departmentRoutes: MetadataRoute.Sitemap = allDepartmentDetails.map((dept) => ({
+  // Dynamic Department Detail Pages (B.Tech only)
+  const departmentRoutes: MetadataRoute.Sitemap = btechDepartments.map((dept) => ({
     url: `${BASE_URL}/departments/${dept.level}/${dept.slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly",

@@ -8,43 +8,43 @@ export const industrialInstrumentationMtech: DepartmentDetail = {
   shortName: "Industrial Instrumentation",
   intake: 18,
   duration: "2 Years",
-  image: "/images/departments/mtech-iic.svg",
-  thumbnail: "/images/departments/mtech-iic-thumb.svg",
-  href: "/departments/mtech/industrial-instrumentation-control",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/mtech-iic.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/mtech-iic.webp",
+  href: "/departments/mtech",
   tagline: "Precision Engineering for Industry 4.0",
   overview:
-    "The M.Tech in Industrial Instrumentation & Control prepares postgraduate engineers for advanced roles in process control, sensor technology, PLC/SCADA systems, and industrial automation. The programme is KTU-affiliated and integrates strong theoretical knowledge with hands-on lab work.",
-  // TODO(content): replace with official vision from the department
+    "Advance your career with an M.Tech in Industrial Instrumentation and Control. Master automation, process control, and smart sensor technology for modern industries. Affiliated with APJ Abdul Kalam Technological University (KTU), the programme delivers advanced training in industrial control loops, PLC/SCADA systems, distributed control architectures, and embedded automation.",
   vision:
-    "To produce expert engineers in industrial instrumentation and control systems capable of leading automation and Industry 4.0 initiatives.",
-  // TODO(content): replace with official mission from the department
+    "To produce expert postgraduate engineers in industrial instrumentation and control systems capable of leading automation, research, and technological innovation.",
   mission:
-    "To provide advanced education in instrumentation and control through research-led teaching and industry collaboration.",
+    "To provide advanced education in instrumentation and process control through research-led teaching, practical simulation, and industry-partnered technical projects.",
   programOutcomes: [
-    // TODO(content): add official POs for this M.Tech programme
+    { code: "PO1", description: "Demonstrate in-depth knowledge of modern instrumentation, industrial sensors, and process control systems." },
+    { code: "PO2", description: "Design and implement complex automated control loops using PLC, SCADA, and DCS architectures." },
+    { code: "PO3", description: "Conduct research, write technical papers, and contribute to industrial automation problem solving." },
   ],
   labs: [
-    { name: "Instrumentation & Control Lab", description: "PLC, SCADA, DCS, and sensor calibration equipment." },
-    // TODO(content): add more lab details
-  ],
-  faculty: [
     {
-      id: "mtech-iic-hod",
-      name: "HOD Name", // TODO(content): replace with real name
-      designation: "Associate Professor & Head of Department",
-      qualification: "M.Tech, Ph.D", // TODO(content): verify
-      isHOD: true,
-      image: "/images/faculty/placeholder-avatar.svg",
+      name: "Advanced Instrumentation & Process Control Lab",
+      description: "Equipped with PLC programming modules, SCADA monitoring stations, sensor calibration benches, and closed-loop process simulators.",
+    },
+    {
+      name: "MEL-R&D Centre (Marine Electricals)",
+      description: "On-campus collaborative research facility established with Marine Electricals (India) Limited for automation and electrical systems.",
     },
   ],
+  faculty: [],
   curriculumLinks: [
-    { label: "KTU M.Tech Industrial Instrumentation Syllabus", href: "https://ktu.edu.in/", isPdf: false },
+    { label: "APJ Abdul Kalam Technological University M.Tech Curriculum", href: "https://ktu.edu.in/", isPdf: false },
   ],
-  achievements: [],
+  achievements: [
+    "Collaborative live projects through on-campus MEL-R&D centre.",
+  ],
   placements: {
-    description: "", // TODO(content): add real placement data
+    description: "Career avenues span process automation engineers, control systems specialists, DCS managers, and instrumentation consultants.",
+    topRecruiters: ["Marine Electricals (India) Ltd", "Axianta MEP & QC", "Montgolfier Engineering", "Crysol Technologies", "SFO Technologies"],
   },
   contact: {
-    email: "instrumentation@mgmcet.ac.in", // TODO(content): verify
+    email: "mail@mgmcet.ac.in",
   },
 };

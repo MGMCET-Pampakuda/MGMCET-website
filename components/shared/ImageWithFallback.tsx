@@ -16,7 +16,7 @@ export interface ImageWithFallbackProps extends Omit<ImageProps, "onError"> {
 export function ImageWithFallback({
   src,
   alt,
-  fallbackSrc = "/images/campus/campus-main.svg",
+  fallbackSrc = "/images/hero/campus-main.webp",
   className,
   ...props
 }: ImageWithFallbackProps) {

@@ -1,113 +1,149 @@
 import React from "react";
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { PageHero } from "@/components/layout/PageHero";
-import { Badge } from "@/components/ui/Badge";
-import { SmartLink } from "@/components/ui/Link";
-import { Icon } from "@/components/shared/Icon";
-import { campusLife } from "@/content/campus-life";
+import { UnderDevelopment } from "@/components/shared";
+import { Users2, Shield, Library, FlaskConical, Home, Bus, ArrowRight } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Campus Life & Facilities | MGM College of Engineering and Technology",
+  title:
+    "Campus Life & Student Facilities | Hostels, Library, Labs & Bus Transit | MGMCET Pampakuda",
   description:
-    "Discover life at MGMCET: state-of-the-art libraries, high-tech labs, hostels, college transport, NSS, arts, sports, and dynamic student associations.",
+    "Experience campus life at MGM College of Engineering and Technology, Pampakuda: modern library, advanced laboratories, safe boys & girls hostels, college bus transportation across Ernakulam, and active student clubs.",
   path: "/campus-life",
+  keywords: [
+    "Campus Life MGMCET",
+    "Engineering College Hostel Ernakulam",
+    "College Bus Facility Pampakuda",
+    "Engineering College Labs Kerala",
+    "MGMCET Library",
+  ],
 });
 
 export default function CampusLifePage() {
+  const activeCampusPortals = [
+    {
+      title: "Clubs & Department Associations",
+      description: "Active technical clubs, coding community (Et Cetera), and departmental academic bodies.",
+      href: "/campus-life/associations-and-clubs",
+      icon: Users2,
+      badge: "Active",
+    },
+    {
+      title: "Women's Cell",
+      description: "Flagship awareness sessions, health and hygiene seminars, and legal literacy workshops.",
+      href: "/campus-life/women-cell",
+      icon: Shield,
+      badge: "Active",
+    },
+    {
+      title: "Central Library",
+      description: "Extensive collections of engineering handbooks, digital e-journals, and quiet study halls.",
+      href: "/campus-life/library",
+      icon: Library,
+      badge: "Available",
+    },
+    {
+      title: "Laboratories & Workshops",
+      description: "Equipped CNC bays, advanced computing suites, hydraulic test benches, and VLSI circuitry.",
+      href: "/campus-life/labs-and-workshops",
+      icon: FlaskConical,
+      badge: "Available",
+    },
+    {
+      title: "Hostel Facilities",
+      description: "Comfortable residential boarding for boys and girls with 24/7 security and dining mess.",
+      href: "/campus-life/hostel",
+      icon: Home,
+      badge: "Available",
+    },
+    {
+      title: "Campus Transportation",
+      description: "Dependable college transit buses connecting Pampakuda across Ernakulam and nearby towns.",
+      href: "/campus-life/transportation",
+      icon: Bus,
+      badge: "Available",
+    },
+  ];
+
   return (
     <div className="flex flex-col w-full">
       <PageHero
         title="Campus Life &amp; Student Ecosystem"
-        description="Experience an enriching college life that nurtures leadership, creativity, sportsmanship, and technical innovation through comprehensive campus infrastructure."
+        description="Experience an enriching college life that nurtures leadership, creativity, sportsmanship, and technical innovation at MGMCET."
         breadcrumbItems={[
           { label: "Home", href: "/" },
           { label: "Campus Life", href: "/campus-life" },
         ]}
-        image="/images/campus/campus-main.svg"
-        badge="Vibrant Student Life"
+        image="/images/hero/campus-main.webp"
+        badge="Will Be Back Soon"
       />
 
-      {/* 1. Activity Statistics */}
-      <Section tone="canvas" spacing="sm">
+      <Section tone="canvas" spacing="default">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {campusLife.stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl bg-surface border border-border text-center shadow-xs space-y-1"
-              >
-                <span className="font-heading font-extrabold text-h2 text-brand-900 block">
-                  {stat.value}
+          <div className="space-y-12">
+            {/* Under Development Banner */}
+            <div className="p-8 sm:p-12 rounded-2xl bg-surface border border-border shadow-xs text-center">
+              <UnderDevelopment
+                title="Campus Life Section is Being Revamped"
+                subtitle="We are actively updating our student life gallery, sports tournament archives, and club documentation. We will be back soon with fresh media and interactive features!"
+                backHref="/"
+                backLabel="Return to Homepage"
+              />
+            </div>
+
+            {/* Currently Active Campus Portals */}
+            <div className="space-y-6">
+              <div className="text-center max-w-xl mx-auto space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-800">
+                  Available Campus Portals
                 </span>
-                <span className="text-body-sm font-medium text-ink-600 block">
-                  {stat.label}
-                </span>
+                <h3 className="font-heading font-bold text-h3 text-ink-900">
+                  Explore Active Portals &amp; Facilities
+                </h3>
+                <p className="text-body-sm text-ink-600">
+                  While our main campus life galleries are being refreshed, you can explore the following live sections:
+                </p>
               </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
 
-      {/* 2. Facilities & Student Communities Grid */}
-      <Section tone="white" spacing="default">
-        <Container>
-          <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
-            <Badge variant="mint" size="sm">
-              FACILITIES &amp; COMMUNITIES
-            </Badge>
-            <h2 className="font-heading font-bold text-h2 text-ink-900">
-              Explore Everything MGMCET Has to Offer
-            </h2>
-            <p className="text-body text-ink-600 leading-relaxed">
-              From cutting-edge academic resources and comfortable residential quarters to competitive athletics and community outreach squads.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {campusLife.features.map((feature) => (
-              <div
-                key={feature.slug}
-                className="group rounded-2xl overflow-hidden bg-surface border border-border shadow-xs hover:shadow-card hover:-translate-y-1 transition-all flex flex-col"
-              >
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-brand-50">
-                  <Image
-                    src={feature.image}
-                    alt={feature.imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-3 left-3 p-2 rounded-xl bg-surface/90 backdrop-blur-xs text-brand-900 shadow-xs">
-                    <Icon name={feature.iconName} className="h-5 w-5" />
-                  </div>
-                </div>
-
-                <div className="p-6 flex flex-col flex-1 justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-heading font-bold text-h4 text-ink-900 group-hover:text-brand-700 transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-body-sm text-ink-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-2 border-t border-border/80">
-                    <SmartLink
-                      href={feature.href}
-                      className="inline-flex items-center gap-1.5 text-body-sm font-semibold text-brand-700 hover:text-brand-800 transition-colors"
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {activeCampusPortals.map((portal) => {
+                  const Icon = portal.icon;
+                  return (
+                    <Link
+                      key={portal.href}
+                      href={portal.href}
+                      className="p-6 rounded-2xl bg-surface border border-border shadow-xs hover:border-brand-600 hover:shadow-md transition-all flex flex-col justify-between group"
                     >
-                      <span>Learn more about {feature.title}</span>
-                      <span>&rarr;</span>
-                    </SmartLink>
-                  </div>
-                </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="w-10 h-10 rounded-xl bg-brand-50 text-brand-900 flex items-center justify-center group-hover:bg-brand-900 group-hover:text-white transition-colors">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200">
+                            {portal.badge}
+                          </span>
+                        </div>
+                        <h4 className="font-heading font-bold text-h4 text-ink-900 group-hover:text-brand-800 transition-colors">
+                          {portal.title}
+                        </h4>
+                        <p className="text-body-sm text-ink-600 leading-relaxed">
+                          {portal.description}
+                        </p>
+                      </div>
+
+                      <div className="pt-4 mt-2 border-t border-border flex items-center gap-1 text-xs font-bold text-brand-700 group-hover:text-brand-900">
+                        <span>View Portal</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
-            ))}
+            </div>
           </div>
         </Container>
       </Section>

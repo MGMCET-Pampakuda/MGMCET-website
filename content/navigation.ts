@@ -6,6 +6,13 @@ import type { NavigationConfig } from "@/types";
  * Do NOT hardcode links in components.
  */
 export const navigation: NavigationConfig = {
+  topBar: {
+    links: [
+      { label: "Campus Life", href: "/campus-life" },
+      { label: "Faculty", href: "/faculty" },
+      { label: "Contact Us", href: "/contact" },
+    ],
+  },
   header: {
     items: [
       { label: "Home", href: "/" },
@@ -73,9 +80,7 @@ export const navigation: NavigationConfig = {
           },
         ],
       },
-      { label: "Campus Life", href: "/campus-life" },
       { label: "News & Events", href: "/news-events" },
-      { label: "Contact Us", href: "/contact" },
       {
         label: "More",
         href: "#",
@@ -143,36 +148,36 @@ export const navigation: NavigationConfig = {
           },
           {
             label: "M.Tech — Industrial Instrumentation & Control",
-            href: "/departments/mtech/industrial-instrumentation-control",
+            href: "/departments/mtech",
           },
           {
             label: "M.Tech — Structural Engineering & Construction Mgmt",
-            href: "/departments/mtech/structural-engineering-construction-management",
+            href: "/departments/mtech",
           },
         ],
       },
       {
         heading: "Polytechnic / Diploma",
         links: [
-          { label: "AI & Machine Learning", href: "/departments/polytechnic/aiml" },
-          { label: "Civil Engineering", href: "/departments/polytechnic/civil" },
+          { label: "AI & Machine Learning", href: "/departments/polytechnic" },
+          { label: "Civil Engineering", href: "/departments/polytechnic" },
           {
             label: "Computer Science & Engineering",
-            href: "/departments/polytechnic/cse",
+            href: "/departments/polytechnic",
           },
-          { label: "Automobile Engineering", href: "/departments/polytechnic/automobile" },
-          { label: "Mechanical Engineering", href: "/departments/polytechnic/mechanical" },
+          { label: "Automobile Engineering", href: "/departments/polytechnic" },
+          { label: "Mechanical Engineering", href: "/departments/polytechnic" },
           {
             label: "Electrical & Electronics Engineering",
-            href: "/departments/polytechnic/eee",
+            href: "/departments/polytechnic",
           },
           {
             label: "Electronics & Communication Engineering",
-            href: "/departments/polytechnic/ece",
+            href: "/departments/polytechnic",
           },
           {
             label: "Electrical Engineering (EV Technology)",
-            href: "/departments/polytechnic/electrical-ev",
+            href: "/departments/polytechnic",
           },
         ],
       },

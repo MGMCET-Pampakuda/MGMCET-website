@@ -9,6 +9,8 @@ export type GalleryCategory =
   | "placements"
   | "all";
 
+export type GalleryMediaType = "image" | "video";
+
 export interface GalleryItem {
   id: string;
   src: string;
@@ -16,4 +18,6 @@ export interface GalleryItem {
   caption?: string;
   category: GalleryCategory;
   date?: string;
+  type?: GalleryMediaType;
+  thumbnail?: string;
 }

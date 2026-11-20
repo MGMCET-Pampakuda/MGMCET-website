@@ -26,7 +26,7 @@ export function PageHero({
   title,
   description,
   breadcrumbItems,
-  image = "/images/campus/campus-main.svg",
+  image = "/images/hero/campus-main.webp",
   badge,
   actions,
   className,
@@ -52,7 +52,7 @@ export function PageHero({
   return (
     <div
       className={cn(
-        "relative overflow-hidden bg-brand-950 text-white py-14 sm:py-20 lg:py-24 border-b border-brand-800",
+        "relative overflow-hidden bg-brand-950 text-white py-10 sm:py-16 lg:py-20 border-b border-brand-800",
         className
       )}
     >

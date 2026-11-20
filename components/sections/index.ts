@@ -10,3 +10,5 @@ export * from "./DirectorQuote";
 export * from "./NewsGrid";
 export * from "./CTABanner";
 export * from "./EnquirySection";
+export * from "./IqacCommitteeTable";
+export * from "./MousPartnerSection";

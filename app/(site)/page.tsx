@@ -10,7 +10,6 @@ import { buildMetadata } from "@/lib/seo";
 import { Reveal } from "@/components/shared";
 import {
   HeroSlider,
-  AnnouncementStrip,
   StatsStrip,
   AboutSplit,
   ProgramCards,
@@ -24,12 +23,31 @@ import {
 } from "@/components/sections";
 
 export function generateMetadata(): Metadata {
-  return buildMetadata({
-    title: "MGM College of Engineering and Technology | MGMCET Pampakuda",
-    description:
-      "AICTE Approved, KTU Affiliated premier engineering college in Pampakuda, Ernakulam, Kerala. Offering B.Tech, M.Tech and Polytechnic diploma programmes in AI/ML, CSE, ECE, Mechanical and more.",
-    path: "/",
-  });
+  return {
+    ...buildMetadata({
+      title:
+        "MGM College of Engineering and Technology (MGMCET) | Top Engineering & Polytechnic College in Pampakuda, Ernakulam, Kerala",
+      description:
+        "MGM College of Engineering and Technology (MGMCET), Pampakuda, Ernakulam, Kerala is an AICTE-approved, KTU-affiliated premier engineering institution. Offering B.Tech in CSE, AI & ML, Cyber Security, Mechanical, ECE; M.Tech; and Polytechnic Diploma courses. Admissions open 2025-26. KEAM Code: MGE.",
+      path: "/",
+      keywords: [
+        "MGM College of Engineering and Technology Pampakuda",
+        "MGMCET Pampakuda",
+        "Best Engineering Colleges in Kerala",
+        "Top Engineering Colleges in Ernakulam",
+        "Engineering Colleges in Kochi",
+        "KTU Affiliated Engineering Colleges Kerala",
+        "AICTE Approved Colleges Kerala",
+        "B.Tech Admissions Kerala 2025",
+        "KEAM College Code MGE",
+        "Polytechnic College Pampakuda",
+      ],
+    }),
+    title: {
+      absolute:
+        "MGM College of Engineering and Technology (MGMCET) | Top Engineering & Polytechnic College in Pampakuda, Ernakulam, Kerala",
+    },
+  };
 }
 
 /**
@@ -37,9 +55,9 @@ export function generateMetadata(): Metadata {
  * All sections are modular, data-driven, and animated via Reveal.
  */
 export default function HomePage() {
-  ReactDOM.preload("/images/hero/hero-1.svg", {
+  ReactDOM.preload("/images/hero/campus-main.webp", {
     as: "image",
-    type: "image/svg+xml",
+    type: "image/webp",
     fetchPriority: "high",
   });
 
@@ -47,9 +65,6 @@ export default function HomePage() {
     <div className="flex flex-col w-full overflow-hidden">
       {/* 2. Hero slider (3 slides) */}
       <HeroSlider slides={home.hero} />
-
-      {/* 3. Announcement strip */}
-      <AnnouncementStrip />
 
       {/* 4. Stats card / strip */}
       <Reveal direction="up" delay={0.1}>

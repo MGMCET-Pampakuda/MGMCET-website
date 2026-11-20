@@ -276,7 +276,7 @@ export function MobileDrawer({ isOpen, onClose, onOpenSearch }: MobileDrawerProp
                   <div className="bg-brand-50/30 px-3 pb-3 pt-1 space-y-1 border-t border-border/40 text-body-sm">
                     {item.children.map((child) => (
                       <SmartLink
-                        key={child.href}
+                        key={`${child.href}-${child.label}`}
                         href={child.href}
                         isExternal={child.isExternal}
                         isPdf={child.isPdf}
@@ -292,6 +292,36 @@ export function MobileDrawer({ isOpen, onClose, onOpenSearch }: MobileDrawerProp
               </div>
             );
           })}
+
+          {/* Quick Links (Campus Life, Faculty, Alumni, Contact Us) */}
+          <div className="pt-3 mt-2 border-t border-border/60">
+            <p className="px-3 pb-1.5 text-xs font-heading font-bold uppercase tracking-wider text-ink-500">
+              Quick Links
+            </p>
+            <div className="grid grid-cols-2 gap-1.5">
+              {navigation.topBar.links.map((link) => {
+                const isActive =
+                  link.href !== "#" &&
+                  (pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href)));
+                return (
+                  <SmartLink
+                    key={link.href + link.label}
+                    href={link.href}
+                    isExternal={link.isExternal}
+                    onClick={onClose}
+                    className={cn(
+                      "px-3 py-2 rounded-lg text-body-sm font-medium transition-colors",
+                      isActive
+                        ? "text-brand-800 font-bold bg-brand-50"
+                        : "text-ink-700 hover:text-brand-800 hover:bg-brand-50/50"
+                    )}
+                  >
+                    {link.label}
+                  </SmartLink>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {/* Footer Area: Apply CTA & Quick Contact */}

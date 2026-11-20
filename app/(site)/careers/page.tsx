@@ -4,10 +4,17 @@ import { CareersView } from "./CareersView";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Careers & Openings | MGM College of Engineering and Technology",
+  title:
+    "Careers & Faculty Openings | Job Vacancies & Teaching Positions | MGMCET Pampakuda",
   description:
-    "Explore faculty and staff career openings, academic positions, and application procedures at MGMCET Pampakuda.",
+    "Explore teaching faculty and administrative staff job openings at MGM College of Engineering and Technology (MGMCET), Pampakuda, Ernakulam. Join a prestigious engineering institution.",
   path: "/careers",
+  keywords: [
+    "MGMCET Careers",
+    "Engineering Faculty Jobs Kerala",
+    "Assistant Professor Vacancy KTU",
+    "College Teaching Jobs Ernakulam",
+  ],
 });
 
 export default function CareersPage() {

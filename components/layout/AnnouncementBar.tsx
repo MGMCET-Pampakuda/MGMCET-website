@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Megaphone, X, ArrowRight } from "lucide-react";
 import { site } from "@/content/site";
 import { SmartLink } from "@/components/ui/Link";
 import { cn } from "@/lib/cn";
+import { subscribeToLiveAnnouncements } from "@/lib/firebase-services";
+import type { AnnouncementItem } from "@/types/site";
 
 export interface AnnouncementBarProps {
   className?: string;
@@ -14,12 +16,23 @@ export interface AnnouncementBarProps {
 
 /**
  * Top announcement strip highlighting active admissions and scholarship alerts.
- * Content-driven from site.ts, fully dismissible by the user.
+ * Subscribes to live Firebase announcements with static site.ts fallback, fully dismissible by the user.
  */
 export function AnnouncementBar({ className, show = true }: AnnouncementBarProps) {
   const [isDismissed, setIsDismissed] = useState(false);
+  const [announcements, setAnnouncements] = useState<AnnouncementItem[]>(site.announcements);
 
-  const activeAnnouncements = site.announcements.filter((a) => a.active);
+  useEffect(() => {
+    const unsubscribe = subscribeToLiveAnnouncements((items) => {
+      if (items && items.length > 0) {
+        setAnnouncements(items);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const activeAnnouncements = announcements.filter((a) => a.active);
 
   if (!show || isDismissed || activeAnnouncements.length === 0) {
     return null;

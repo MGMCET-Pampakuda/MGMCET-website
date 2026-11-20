@@ -30,8 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (NEVER commit secrets or keys)
+.env
+.env.local
+.env.*.local
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,4 +43,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# dev screenshots & media artifacts
+public/screenshots/
+*.log
+
+# scraper output
+scripts/scrape/output/
+
+# agent & local tools
+.agents/
+skills-lock.json
 

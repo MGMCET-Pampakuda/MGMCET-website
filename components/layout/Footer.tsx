@@ -41,13 +41,17 @@ export function Footer({ className }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-brand-800/60">
           {/* Column 1 (4 cols): MGM College Details */}
           <div className="lg:col-span-4 space-y-5">
-            <SmartLink href="/" className="inline-block focus-visible:outline-2 focus-visible:outline-accent-400">
+            <SmartLink
+              href="/"
+              className="inline-flex items-center bg-white px-3.5 py-2 rounded-xl shadow-xs hover:opacity-95 transition-opacity focus-visible:outline-2 focus-visible:outline-accent-400"
+              aria-label={`${site.name} Home`}
+            >
               <Image
-                src="/images/brand/logo-light.svg"
+                src="/images/brand/logo.png"
                 alt={site.name}
-                width={240}
-                height={64}
-                className="h-12 w-auto"
+                width={220}
+                height={86}
+                className="h-11 sm:h-12 w-auto object-contain"
               />
             </SmartLink>
 
@@ -129,7 +133,7 @@ export function Footer({ className }: FooterProps) {
                 </h3>
                 <ul className="space-y-2 text-body-sm text-brand-100/80">
                   {col.links.map((link) => (
-                    <li key={link.href}>
+                    <li key={`${link.href}-${link.label}`}>
                       <SmartLink
                         href={link.href}
                         isExternal={link.isExternal}
@@ -173,6 +177,13 @@ export function Footer({ className }: FooterProps) {
               className="hover:text-white transition-colors"
             >
               Terms & Conditions
+            </SmartLink>
+            <span>•</span>
+            <SmartLink
+              href="/admin"
+              className="text-accent-400/90 hover:text-accent-300 font-medium transition-colors"
+            >
+              Staff Portal
             </SmartLink>
           </div>
         </div>

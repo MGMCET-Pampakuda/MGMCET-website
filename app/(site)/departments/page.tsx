@@ -13,72 +13,110 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Badge } from "@/components/ui/Badge";
 import { SmartLink } from "@/components/ui/Link";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
-import { CTABanner } from "@/components/sections/CTABanner";
 import { buildMetadata } from "@/lib/seo";
-import { home } from "@/content/home";
 import type { DepartmentMeta } from "@/types";
+import { cn } from "@/lib/cn";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Academic Departments & Programs | MGMCET Pampakuda",
+    title:
+      "Engineering & Polytechnic Departments | MGM College of Engineering and Technology (MGMCET)",
     description:
-      "Explore engineering departments and courses at MGM College of Engineering and Technology, Pampakuda. Offering AICTE approved B.Tech (5), M.Tech (2), and Polytechnic Diploma (8) programmes.",
+      "Explore AICTE approved engineering departments and courses at MGM College of Engineering and Technology, Pampakuda, Ernakulam. Offering KTU-affiliated B.Tech (CSE, AI/ML, Cyber Security, Mechanical, ECE), M.Tech, and Polytechnic Diploma programs.",
     path: "/departments",
+    keywords: [
+      "Engineering Courses Kerala",
+      "KTU BTech Branches",
+      "Computer Science Engineering KTU",
+      "AI & Machine Learning Engineering Kerala",
+      "Polytechnic Diploma Courses Ernakulam",
+      "Mechanical Engineering College Kerala",
+      "MGMCET Departments",
+    ],
   });
 }
 
 function DepartmentCardGrid({ items }: { items: DepartmentMeta[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {items.map((dept) => (
-        <SmartLink
-          key={dept.id}
-          href={dept.href}
-          className="group rounded-2xl bg-surface border border-border hover:border-brand-600 shadow-xs hover:shadow-card hover:-translate-y-1 transition-all flex flex-col overflow-hidden"
-        >
-          {/* Thumbnail */}
-          <div className="relative aspect-[16/9] w-full bg-brand-50 overflow-hidden">
-            <Image
-              src={dept.thumbnail || dept.image}
-              alt={dept.name}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
-              aria-hidden="true"
-            />
-            <div className="absolute top-3 right-3">
-              <Badge variant="brand-dark" size="sm" pill>
-                Intake: {dept.intake || 60}
-              </Badge>
-            </div>
-          </div>
+      {items.map((dept) => {
+        const isBtech = dept.level === "btech";
+        const CardWrapper = isBtech ? SmartLink : "div";
+        const wrapperProps = isBtech
+          ? {
+              href: dept.href,
+              className:
+                "group rounded-2xl bg-surface border border-border hover:border-brand-600 shadow-xs hover:shadow-card hover:-translate-y-1 transition-all flex flex-col overflow-hidden",
+            }
+          : {
+              className:
+                "rounded-2xl bg-surface border border-border shadow-xs flex flex-col overflow-hidden",
+            };
 
-          {/* Details */}
-          <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-            <div className="space-y-2">
-              <span className="text-caption uppercase font-semibold text-accent-700 tracking-wider">
-                {dept.duration}
-              </span>
-              <h3 className="font-heading font-bold text-h4 text-ink-900 group-hover:text-brand-800 transition-colors">
-                {dept.name}
-              </h3>
-              {dept.shortName && (
-                <p className="text-body-sm text-ink-500 font-medium">
-                  ({dept.shortName})
-                </p>
+        return (
+          // @ts-expect-error dynamic wrapper element
+          <CardWrapper key={dept.id} {...wrapperProps}>
+            {/* Thumbnail */}
+            <div className="relative aspect-[16/9] w-full bg-brand-50 overflow-hidden">
+              <Image
+                src={dept.thumbnail || dept.image}
+                alt={dept.name}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className={cn(
+                  "object-cover object-center",
+                  isBtech &&
+                    "group-hover:scale-105 transition-transform duration-500"
+                )}
+              />
+              {isBtech && (
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-ink-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                  aria-hidden="true"
+                />
+              )}
+              <div className="absolute top-3 right-3">
+                <Badge variant="brand-dark" size="sm" pill>
+                  Intake: {dept.intake || 60}
+                </Badge>
+              </div>
+            </div>
+
+            {/* Details */}
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-2">
+                <span className="text-caption uppercase font-semibold text-accent-700 tracking-wider">
+                  {dept.duration}
+                </span>
+                <h3
+                  className={cn(
+                    "font-heading font-bold text-h4 text-ink-900",
+                    isBtech && "group-hover:text-brand-800 transition-colors"
+                  )}
+                >
+                  {dept.name}
+                </h3>
+                {dept.shortName && (
+                  <p className="text-body-sm text-ink-500 font-medium">
+                    ({dept.shortName})
+                  </p>
+                )}
+              </div>
+
+              {isBtech ? (
+                <div className="pt-4 border-t border-border flex items-center justify-between text-body-sm font-semibold text-brand-700 group-hover:text-brand-900">
+                  <span>Explore Curriculum &amp; Labs</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </div>
+              ) : (
+                <div className="pt-4 border-t border-border flex items-center justify-between text-body-sm text-ink-600 font-medium">
+                  <span>Approved Specialization</span>
+                </div>
               )}
             </div>
-
-            <div className="pt-4 border-t border-border flex items-center justify-between text-body-sm font-semibold text-brand-700 group-hover:text-brand-900">
-              <span>Explore Curriculum &amp; Labs</span>
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </div>
-          </div>
-        </SmartLink>
-      ))}
+          </CardWrapper>
+        );
+      })}
     </div>
   );
 }
@@ -235,9 +273,6 @@ export default function DepartmentsOverviewPage() {
           </Tabs>
         </Container>
       </Section>
-
-      {/* Admissions CTA */}
-      <CTABanner ctaBanner={home.ctaBanner} />
     </div>
   );
 }

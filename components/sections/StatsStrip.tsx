@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from "react";
 import type { Stat } from "@/types";
 import { Container } from "@/components/layout/Container";
 import { Icon } from "@/components/shared/Icon";
-import { IconBox } from "@/components/ui/IconBox";
 import { cn } from "@/lib/cn";
 
 export interface StatsStripProps {
@@ -65,24 +64,19 @@ function StatCardItem({
   return (
     <div
       className={cn(
-        "flex items-center gap-4 py-4 px-4 sm:px-6 lg:px-8",
-        !isLast && "lg:border-r lg:border-border"
+        "flex items-center gap-2.5 sm:gap-4 p-2.5 sm:py-3 sm:px-5 rounded-xl hover:bg-brand-50/50 transition-colors",
+        !isLast && "lg:border-r lg:border-border/80"
       )}
     >
-      <IconBox
-        variant="mint"
-        size="md"
-        shape="rounded"
-        className="shrink-0 bg-brand-50 text-brand-700"
-      >
-        <Icon name={stat.iconName || "Award"} className="h-6 w-6" />
-      </IconBox>
+      <div className="p-2 sm:p-2.5 rounded-xl bg-brand-50 text-brand-700 shrink-0">
+        <Icon name={stat.iconName || "Award"} className="h-4 w-4 sm:h-5 sm:w-5" />
+      </div>
 
       <div className="space-y-0.5 min-w-0">
-        <p className="font-heading text-h2 font-bold text-ink-900 tracking-tight leading-none">
+        <p className="font-heading text-lg sm:text-2xl lg:text-3xl font-bold text-ink-900 tracking-tight leading-none">
           {animatedValue}
         </p>
-        <p className="font-heading text-body-sm font-medium text-ink-600 leading-tight">
+        <p className="font-heading text-[11px] sm:text-caption font-medium text-ink-600 leading-tight truncate">
           {stat.label}
         </p>
       </div>
@@ -120,10 +114,10 @@ export function StatsStrip({ stats, className }: StatsStripProps) {
     <section
       ref={containerRef}
       aria-label="Key College Statistics"
-      className={cn("py-8 sm:py-10 bg-canvas", className)}
+      className={cn("py-4 sm:py-8 bg-canvas", className)}
     >
       <Container>
-        <div className="rounded-2xl bg-surface border border-border shadow-card p-2 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-2">
+        <div className="rounded-2xl bg-surface border border-border shadow-card p-2 sm:p-4 grid grid-cols-2 lg:grid-cols-4 gap-1.5 sm:gap-3">
           {stats.map((stat, idx) => (
             <StatCardItem
               key={stat.id}

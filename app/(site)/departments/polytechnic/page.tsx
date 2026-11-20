@@ -6,10 +6,20 @@ import { buildMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Polytechnic Diploma Programmes | MGM College of Engineering and Technology",
+    title:
+      "Polytechnic Diploma Colleges in Kerala | 3-Year Engineering Diplomas | MGMCET Pampakuda",
     description:
-      "Three-year technical diploma courses in AI & ML, Automobile, Civil, CSE, ECE, EEE, Electrical & EV, and Mechanical Engineering at MGMCET Pampakuda.",
+      "Three-year technical polytechnic diploma courses in AI & ML, Automobile, Civil, CSE, ECE, EEE, Electrical & EV, and Mechanical Engineering at MGM Polytechnic College, Pampakuda, Ernakulam. DTE Kerala approved with top workshops.",
     path: "/departments/polytechnic",
+    keywords: [
+      "Polytechnic Colleges in Kerala",
+      "Kerala Polytechnic Admission 2025",
+      "MGM Polytechnic College Pampakuda",
+      "Diploma in Engineering Ernakulam",
+      "Automobile Engineering Diploma Kerala",
+      "Electric Vehicle Diploma Kerala",
+      "DTE Kerala Polytechnic Colleges",
+    ],
   });
 }
 

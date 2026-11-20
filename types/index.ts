@@ -12,6 +12,7 @@ export type * from "./gallery";
 export type * from "./careers";
 export type * from "./faculty";
 export type * from "./forms";
+export type * from "./academics";
 
 // Re-export type guard
 export { isNavGroup } from "./navigation";

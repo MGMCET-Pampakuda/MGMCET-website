@@ -1,22 +1,33 @@
 import type { DepartmentDetail } from "@/types";
 
-// TODO(content): replace all placeholder values with real department data
 export const csePoly: DepartmentDetail = {
   id: "poly-cse",
   slug: "cse",
   level: "polytechnic",
   name: "Computer Science & Engineering",
   shortName: "CSE",
-  intake: 30,
+  intake: 60,
   duration: "3 Years",
-  image: "/images/departments/poly-cse.svg",
-  thumbnail: "/images/departments/poly-cse-thumb.svg",
-  href: "/departments/polytechnic/cse",
-  overview: "The Diploma in Computer Science & Engineering provides students with foundational technical skills aligned with industry and the SBTET/KTU polytechnic curriculum.",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/polytechnic-cse.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/polytechnic-cse.webp",
+  href: "/departments/polytechnic",
+  overview:
+    "The 3-Year Diploma in Computer Science & Engineering imparts practical foundations in computer programming, database administration, web development, computer networking, hardware troubleshooting, and operating systems.",
   programOutcomes: [],
-  labs: [{ name: "CSE Lab", description: "Equipped for practical coursework." }], // TODO(content): add real lab details
-  faculty: [{ id: "poly-cse-hod", name: "HOD Name", designation: "Lecturer & HOD", isHOD: true, image: "/images/faculty/placeholder-avatar.svg" }], // TODO(content): replace
-  curriculumLinks: [],
+  labs: [
+    {
+      name: "Computer Hardware & Network Lab",
+      description: "Equipped with PC assembly stations, networking switches, routers, and diagnostic toolkits.",
+    },
+    {
+      name: "Software Application Lab",
+      description: "Workstations running C++, Java, Python, and open-source database management systems.",
+    },
+  ],
+  faculty: [],
+  curriculumLinks: [
+    { label: "State Board of Technical Education (SBTET) Diploma Curriculum", href: "https://www.dtekerala.gov.in/", isPdf: false },
+  ],
   achievements: [],
-  contact: { email: "poly-cse@mgmcet.ac.in" }, // TODO(content): verify
+  contact: { email: "mail@mgmcet.ac.in" },
 };

@@ -62,7 +62,7 @@ export interface DepartmentDetail extends DepartmentMeta {
   labs: Lab[];
   faculty: Faculty[];
   curriculumLinks: CurriculumLink[];
-  achievements?: Achievement[];
+  achievements?: Array<Achievement | string>;
   placements?: {
     description?: string;
     topRecruiters?: string[];

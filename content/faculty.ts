@@ -1,58 +1,259 @@
 import type { FacultyMember } from "@/types";
 
 /**
- * Faculty listing.
- * TODO(content): replace all placeholder entries with real faculty data including
- * actual names, qualifications, designations, experience, and profile photos.
- * Required photo dimensions: 400×400px (1:1 square).
+ * Verified Faculty listing categorized by departments from official records.
  */
 export const faculty: FacultyMember[] = [
-  // ─── B.Tech — AI & ML ────────────────────────────────────────────────────
+  // ─── 1. Computer Science and Engineering ──────────────────────────────────
   {
-    id: "btech-aiml-hod",
-    name: "HOD Name", // TODO(content): replace
-    designation: "Associate Professor & Head of Department",
-    qualification: "M.Tech, Ph.D (Pursuing)", // TODO(content): verify
-    department: "Artificial Intelligence & Machine Learning",
-    departmentLevel: "btech",
-    isHOD: true,
-    image: "/images/faculty/placeholder-avatar.svg",
-  },
-  // TODO(content): add all faculty members for each department
-
-  // ─── B.Tech — CSE ────────────────────────────────────────────────────────
-  {
-    id: "btech-cse-hod",
-    name: "HOD Name", // TODO(content): replace
-    designation: "Associate Professor & Head of Department",
-    qualification: "M.Tech, Ph.D", // TODO(content): verify
+    id: "fac-cse-1",
+    name: "Jyothilakshmi T S",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
     department: "Computer Science & Engineering",
     departmentLevel: "btech",
-    isHOD: true,
-    image: "/images/faculty/placeholder-avatar.svg",
+    email: "mail@mgmcet.ac.in",
   },
-
-  // ─── B.Tech — ECE ────────────────────────────────────────────────────────
   {
-    id: "btech-ece-hod",
-    name: "HOD Name", // TODO(content): replace
-    designation: "Associate Professor & Head of Department",
-    qualification: "M.Tech, Ph.D (Pursuing)", // TODO(content): verify
-    department: "Electronics & Communication Engineering",
+    id: "fac-cse-2",
+    name: "Divyamol K U",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
     departmentLevel: "btech",
-    isHOD: true,
-    image: "/images/faculty/placeholder-avatar.svg",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-3",
+    name: "Saranya Sasi",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-4",
+    name: "Jishnu Jyothis",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-5",
+    name: "Arun B S",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-6",
+    name: "Sayuj Mohan",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-7",
+    name: "Shimi A V",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-8",
+    name: "Shreya",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-9",
+    name: "Lancy Biji",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-10",
+    name: "Athulya R",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-11",
+    name: "Veena G",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-12",
+    name: "Saneesha M S",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-cse-13",
+    name: "Athira T",
+    designation: "Assistant Professor",
+    qualification: "MCA",
+    department: "Computer Science & Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
   },
 
-  // ─── B.Tech — Mechanical ─────────────────────────────────────────────────
+  // ─── 2. Science and Humanities ───────────────────────────────────────────
   {
-    id: "btech-mechanical-hod",
-    name: "HOD Name", // TODO(content): replace
-    designation: "Associate Professor & Head of Department",
-    qualification: "M.Tech, Ph.D (Pursuing)", // TODO(content): verify
+    id: "fac-sh-1",
+    name: "Sajitha Kumari",
+    designation: "Associate Professor",
+    qualification: "Ph.D",
+    department: "Science & Humanities",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-sh-2",
+    name: "Athira Nandakumar",
+    designation: "Assistant Professor",
+    qualification: "MSc (Chemistry)",
+    department: "Science & Humanities",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-sh-3",
+    name: "Athulya C",
+    designation: "Assistant Professor",
+    qualification: "MSc (Mathematics)",
+    department: "Science & Humanities",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-sh-4",
+    name: "Nevin N G",
+    designation: "Assistant Professor",
+    qualification: "MA (Economics)",
+    department: "Science & Humanities",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-sh-5",
+    name: "Mary Jacob",
+    designation: "Assistant Professor",
+    qualification: "MA (English & Literature)",
+    department: "Science & Humanities",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-sh-6",
+    name: "Lakshmi G Ashok",
+    designation: "Assistant Professor",
+    qualification: "MSc (Physics)",
+    department: "Science & Humanities",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+
+  // ─── 3. Mechanical Engineering ───────────────────────────────────────────
+  {
+    id: "fac-me-1",
+    name: "Linto Jose K",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
     department: "Mechanical Engineering",
     departmentLevel: "btech",
-    isHOD: true,
-    image: "/images/faculty/placeholder-avatar.svg",
+    email: "mail@mgmcet.ac.in",
+  },
+
+  // ─── 4. Electrical and Electronics Engineering ───────────────────────────
+  {
+    id: "fac-eee-1",
+    name: "GokulKrishna S",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Electrical & Electronics Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-eee-2",
+    name: "Neethu B",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Electrical & Electronics Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+
+  // ─── 5. Electronics and Communication (EC) ───────────────────────────────
+  {
+    id: "fac-ece-1",
+    name: "Sneha Namboothiri",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Electronics & Communication Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-ece-2",
+    name: "Raina Roy",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Electronics & Communication Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-ece-3",
+    name: "Neethu Joy",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Electronics & Communication Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-ece-4",
+    name: "Kessia Mathew",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Electronics & Communication Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
+  },
+  {
+    id: "fac-ece-5",
+    name: "Namratha Chandran",
+    designation: "Assistant Professor",
+    qualification: "M Tech",
+    department: "Electronics & Communication Engineering",
+    departmentLevel: "btech",
+    email: "mail@mgmcet.ac.in",
   },
 ];

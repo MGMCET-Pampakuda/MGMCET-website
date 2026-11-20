@@ -4,10 +4,17 @@ import { FacultyView } from "./FacultyView";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Faculty Directory | MGM College of Engineering and Technology",
+  title:
+    "Distinguished Faculty Directory | Professors & Department Heads | MGMCET Pampakuda",
   description:
-    "Explore the experienced faculty, heads of department, and professors across engineering disciplines at MGMCET Pampakuda.",
+    "Meet the experienced faculty members, heads of departments, and professors across engineering disciplines at MGM College of Engineering and Technology (MGMCET), Pampakuda, Ernakulam, Kerala.",
   path: "/faculty",
+  keywords: [
+    "MGMCET Faculty",
+    "Engineering Professors Kerala",
+    "KTU Engineering Faculty Ernakulam",
+    "Heads of Department MGMCET",
+  ],
 });
 
 export default function FacultyPage() {

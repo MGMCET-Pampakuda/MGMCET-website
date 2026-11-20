@@ -1,6 +1,6 @@
 import type { DepartmentDetail } from "@/types";
 
-export const cseCyberBtech: DepartmentDetail = {
+export const cseCyberSecurityBtech: DepartmentDetail = {
   id: "btech-cse-cyber-security",
   slug: "cse-cyber-security",
   level: "btech",
@@ -8,59 +8,62 @@ export const cseCyberBtech: DepartmentDetail = {
   shortName: "CSE (Cyber Security)",
   intake: 60,
   duration: "4 Years",
-  image: "/images/departments/btech-cse-cyber.svg",
-  thumbnail: "/images/departments/btech-cse-cyber-thumb.svg",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-cyber-security.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-cyber-security.webp",
   href: "/departments/btech/cse-cyber-security",
-  tagline: "Defending the Digital World",
+  tagline: "Securing Digital Frontiers and Critical Information Infrastructure",
   overview:
-    "The B.Tech in Computer Science & Engineering (Cyber Security) programme focuses on equipping students with the knowledge and skills to protect digital infrastructure. The curriculum covers network security, ethical hacking, cryptography, digital forensics, and secure software development, aligned with KTU norms.",
-  // TODO(content): replace with official vision from the department
+    "The Department of Computer Science & Engineering offers this specialized B.Tech program in Cybersecurity to address the critical global demand for information security professionals. Students are provided with the optimal learning environment to master network defense, cryptography, secure coding, digital forensics, ethical hacking, and risk management.",
   vision:
-    "To be a leading centre for cyber security education and research, producing ethical and competent security professionals.",
-  // TODO(content): replace with official mission from the department
+    "To emerge as a premier center of excellence in cybersecurity education and threat research, developing trusted professionals who safeguard national and global digital assets.",
   mission:
-    "To impart quality education in cyber security through a blend of theoretical foundation and practical skills, preparing students for industry and research.",
+    "Deliver cutting-edge education in cybersecurity and computer systems; nurture proactive problem-solving and ethical mindsets in threat intelligence; and produce graduates with high technical competence and social responsibility.",
   programOutcomes: [
-    // TODO(content): replace with official KTU Programme Outcomes
-    { code: "PO1", description: "Engineering Knowledge: Apply mathematics, science, and engineering fundamentals." },
-    { code: "PO2", description: "Problem Analysis: Formulate and analyse complex security problems." },
-    { code: "PO3", description: "Design/Development of Solutions: Design secure systems and solutions." },
-    { code: "PO4", description: "Conduct Investigations: Apply research-based methods to security challenges." },
-    { code: "PO5", description: "Modern Tool Usage: Use appropriate security tools and frameworks." },
-    { code: "PO6", description: "Engineer and Society: Understand societal and legal aspects of cyber security." },
-    { code: "PO7", description: "Environment and Sustainability: Evaluate sustainability of digital solutions." },
-    { code: "PO8", description: "Ethics: Commit to ethical hacking and responsible disclosure principles." },
-    { code: "PO9", description: "Individual and Team Work: Collaborate effectively in security teams." },
-    { code: "PO10", description: "Communication: Present technical security findings clearly." },
-    { code: "PO11", description: "Project Management: Manage security projects effectively." },
-    { code: "PO12", description: "Life-long Learning: Stay current in the evolving cyber security landscape." },
+    { code: "PEO1", description: "Graduates will be able to apply their cybersecurity knowledge for the betterment and security of society." },
+    { code: "PEO2", description: "Graduates will demonstrate the capability to identify vulnerabilities and security problems in areas relevant to cybersecurity and computer science, formulating robust defense mechanisms." },
+    { code: "PEO3", description: "Graduates will address technological challenges in advance by applying their analytical and cryptographic capabilities." },
+    { code: "PEO4", description: "Graduates will face global competition in Information Security and Information Technology, achieving high-impact placements in reputed organizations." },
   ],
   labs: [
-    // TODO(content): replace with actual lab names
-    { name: "Cyber Security Lab", description: "Dedicated lab for ethical hacking, network security, and penetration testing." },
-    { name: "Digital Forensics Lab", description: "Equipped for investigation and analysis of digital evidence." },
-    { name: "Networking Lab", description: "Cisco and Linux-based networking environment." },
-  ],
-  faculty: [
-    // TODO(content): replace with actual HOD and faculty
     {
-      id: "btech-cse-cyber-hod",
-      name: "HOD Name", // TODO(content): replace with real name
-      designation: "Associate Professor & Head of Department",
-      qualification: "M.Tech, Ph.D (Pursuing)", // TODO(content): verify
-      isHOD: true,
-      image: "/images/faculty/placeholder-avatar.svg",
+      name: "Network Security & Cyber Defense Lab",
+      description:
+        "Equipped with modern high-performance desktop systems powered by Intel Core i5 processors and 8 GB RAM, connected to Gigabit LAN with uninterrupted high-bandwidth internet connectivity and centralized UPS backup. Configured with dual-boot Linux and Windows environments running network packet analyzers, Wireshark, firewall testing tools, and threat simulation suites.",
+    },
+    {
+      name: "Programming & Secure Software Development Lab",
+      description:
+        "Modern computer laboratory featuring Intel Core i5 workstations with 8 GB RAM and SSD storage. Provides dual-boot Ubuntu Linux and Windows environments pre-loaded with GCC/G++, Python, Java Development Kit, secure coding frameworks, and debugging environments.",
+    },
+    {
+      name: "Database Security & Cryptography Lab",
+      description:
+        "Specialized laboratory featuring Intel Core i5 systems with 8 GB RAM on high-speed local networking. Loaded with database management engines, cryptographic algorithm toolkits, and data encryption test environments for hands-on security practicals.",
+    },
+    {
+      name: "System Software & Hardware Security Lab",
+      description:
+        "Dedicated computing lab powered by Intel Core i5 processors and 8 GB RAM for low-level system software analysis, MASM assemblers, kernel debugging, and microcomputing experiments.",
+    },
+    {
+      name: "Department Library & Resource Centre",
+      description:
+        "Dedicated departmental reference collection covering network security, cryptography, penetration testing, ethical hacking, and computer science literature.",
     },
   ],
+  faculty: [],
   curriculumLinks: [
-    { label: "KTU B.Tech CSE (Cyber Security) Syllabus", href: "https://ktu.edu.in/", isPdf: false },
+    { label: "APJ Abdul Kalam Technological University B.Tech CSE (Cyber Security) Syllabus", href: "https://ktu.edu.in/", isPdf: false },
   ],
-  achievements: [],
+  achievements: [
+    "Specialized training modules in vulnerability assessment and network penetration testing.",
+    "Student participation in national cyber security competitions and capture-the-flag events.",
+  ],
   placements: {
-    description: "Students have been recruited by leading IT and security firms.", // TODO(content): add real data
-    topRecruiters: [],
+    description: "High demand across security operations centers (SOC), vulnerability management, cloud security, and financial technology institutions.",
+    topRecruiters: ["TCS", "Infosys", "Wipro Technologies", "Cognizant", "Mphasis", "UST Global", "IBS Software", "VVDN Technologies"],
   },
   contact: {
-    email: "cse-cyber@mgmcet.ac.in", // TODO(content): verify
+    email: "mail@mgmcet.ac.in",
   },
 };

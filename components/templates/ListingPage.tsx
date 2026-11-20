@@ -74,7 +74,7 @@ export function ListingPage({
                     type="button"
                     onClick={() => onFilterChange?.(filter.value)}
                     className={cn(
-                      "px-4 py-2 rounded-full text-xs sm:text-body-sm font-semibold transition-all shrink-0 cursor-pointer",
+                      "px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-body-sm font-semibold transition-all shrink-0 cursor-pointer whitespace-nowrap",
                       activeFilter === filter.value
                         ? "bg-brand-900 text-white shadow-xs"
                         : "bg-surface text-ink-600 hover:bg-brand-50 hover:text-brand-900 border border-border"

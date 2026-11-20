@@ -5,10 +5,17 @@ import { downloads } from "@/content/downloads";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Downloads & Documents | MGM College of Engineering and Technology",
+  title:
+    "Downloads & Official Documents | AICTE Approvals, NIRF & Prospectus | MGMCET Pampakuda",
   description:
-    "Access mandatory disclosures, NIRF reports, AICTE approvals, college prospectus, and academic documents from MGMCET.",
+    "Download official regulatory filings, AICTE approval orders, NIRF reports, mandatory disclosures, and prospectus of MGM College of Engineering and Technology (MGMCET), Pampakuda.",
   path: "/downloads",
+  keywords: [
+    "MGMCET Downloads",
+    "AICTE Approval Letter MGMCET",
+    "NIRF Report MGMCET",
+    "College Prospectus Kerala Engineering",
+  ],
 });
 
 export default function DownloadsRoute() {

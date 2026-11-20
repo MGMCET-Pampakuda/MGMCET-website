@@ -8,44 +8,43 @@ export const structuralEngineeringMtech: DepartmentDetail = {
   shortName: "Structural Engineering",
   intake: 18,
   duration: "2 Years",
-  image: "/images/departments/mtech-secm.svg",
-  thumbnail: "/images/departments/mtech-secm-thumb.svg",
-  href: "/departments/mtech/structural-engineering-construction-management",
-  tagline: "Building Safe, Sustainable Structures",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/mtech-se-cm.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/mtech-se-cm.webp",
+  href: "/departments/mtech",
+  tagline: "Mastering Structural Design and Modern Project Leadership",
   overview:
-    "The M.Tech in Structural Engineering & Construction Management provides advanced expertise in structural analysis, design, project management, and construction technology. Graduates are equipped to take on leadership roles in civil infrastructure projects.",
-  // TODO(content): replace with official vision from the department
+    "Master the dual expertise of advanced structural analysis and construction site leadership. Affiliated with APJ Abdul Kalam Technological University (KTU), our M.Tech program covers earthquake-resistant design, sustainable materials, structural health monitoring, BIM workflows, and modern infrastructure project management.",
   vision:
-    "To develop expert structural engineers and construction managers who drive infrastructure excellence through innovation.",
-  // TODO(content): replace with official mission from the department
+    "To develop expert structural engineers and construction managers who drive infrastructure excellence, safe structural design, and sustainable construction practices.",
   mission:
-    "To provide advanced structural engineering education with emphasis on safe design, sustainable construction, and effective project management.",
+    "To provide advanced structural engineering education with emphasis on resilient design, modern construction technology, digital project management tools, and ethical engineering governance.",
   programOutcomes: [
-    // TODO(content): add official POs for this M.Tech programme
+    { code: "PO1", description: "Apply advanced knowledge of structural mechanics, finite element modelling, and structural dynamics to complex civil structures." },
+    { code: "PO2", description: "Design earthquake-resistant and wind-resistant buildings, bridges, and foundation systems adhering to national and international codes." },
+    { code: "PO3", description: "Implement modern construction management techniques, project scheduling, cost control, and quality assurance frameworks." },
   ],
   labs: [
-    { name: "Structural Analysis Lab", description: "Software tools for FEM analysis including STAAD.Pro and ETABS." },
-    { name: "Construction Materials Lab", description: "Testing equipment for concrete, steel, and other construction materials." },
-    // TODO(content): add more lab details
-  ],
-  faculty: [
     {
-      id: "mtech-secm-hod",
-      name: "HOD Name", // TODO(content): replace with real name
-      designation: "Associate Professor & Head of Department",
-      qualification: "M.Tech, Ph.D", // TODO(content): verify
-      isHOD: true,
-      image: "/images/faculty/placeholder-avatar.svg",
+      name: "Computational Structural Design Lab",
+      description: "Equipped with industry-standard analysis software including STAAD.Pro, ETABS, and Tekla for 3D structural modelling and analysis.",
+    },
+    {
+      name: "Advanced Construction Materials & Testing Lab",
+      description: "Testing facilities for high-strength concrete, rebar evaluation, non-destructive testing (NDT), and aggregate characterization.",
     },
   ],
+  faculty: [],
   curriculumLinks: [
-    { label: "KTU M.Tech Structural Engineering Syllabus", href: "https://ktu.edu.in/", isPdf: false },
+    { label: "APJ Abdul Kalam Technological University M.Tech Curriculum", href: "https://ktu.edu.in/", isPdf: false },
   ],
-  achievements: [],
+  achievements: [
+    "Technical workshops on Tekla software and modern construction project methodologies.",
+  ],
   placements: {
-    description: "", // TODO(content): add real placement data
+    description: "Graduates take on roles as structural consultants, senior design engineers, project managers, and quality control leads.",
+    topRecruiters: ["Cherian Varkey Constructions (CVC)", "Aarbee Structures", "Armstech Engineers", "Mary Matha Constructions", "Axianta MEP & QC"],
   },
   contact: {
-    email: "structural@mgmcet.ac.in", // TODO(content): verify
+    email: "mail@mgmcet.ac.in",
   },
 };

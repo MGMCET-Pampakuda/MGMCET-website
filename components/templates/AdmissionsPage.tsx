@@ -135,6 +135,7 @@ export function AdmissionsPage({
           <div className="flex flex-wrap gap-3">
             <SmartLink
               href={site.applyNowUrl}
+              isExternal
               className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-accent-500 hover:bg-accent-600 text-white font-heading font-semibold text-body-sm shadow-card transition-all"
             >
               Apply Online Now &rarr;
@@ -144,7 +145,7 @@ export function AdmissionsPage({
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-heading font-semibold text-body-sm border border-white/20 transition-all"
             >
               <Download className="h-4 w-4" />
-              <span>Download Prospectus</span>
+              <span>Regulatory Documents</span>
             </SmartLink>
           </div>
         }
@@ -170,7 +171,7 @@ export function AdmissionsPage({
               {ELIGIBILITY_LEVELS.map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl bg-surface border border-border p-6 sm:p-8 shadow-xs flex flex-col justify-between space-y-6 hover:border-brand-500 transition-colors"
+                  className="rounded-2xl bg-surface border border-border p-4 sm:p-6 shadow-xs flex flex-col justify-between space-y-4 sm:space-y-6 hover:border-brand-500 transition-colors"
                 >
                   <div className="space-y-4">
                     <div className="space-y-1">
@@ -230,7 +231,7 @@ export function AdmissionsPage({
             {ADMISSION_STEPS.map((step) => (
               <div
                 key={step.step}
-                className="rounded-2xl bg-brand-50 border border-brand-100 p-6 shadow-xs space-y-3"
+                className="rounded-2xl bg-brand-50 border border-brand-100 p-4 sm:p-6 shadow-xs space-y-2.5 sm:space-y-3"
               >
                 <span className="font-mono text-xs font-bold text-brand-900 bg-brand-200/60 px-3 py-1 rounded-full inline-block">
                   STEP 0{step.step}
@@ -339,7 +340,6 @@ export function AdmissionsPage({
           title: "Admissions Open for Academic Year 2026",
           description: "Take the first step towards a rewarding engineering career. Fill out our online application or speak directly with our admissions desk.",
           primaryCta: { label: "Apply Online", href: site.applyNowUrl },
-          secondaryCta: { label: "Download Prospectus", href: "/downloads" },
         }}
       />
     </div>

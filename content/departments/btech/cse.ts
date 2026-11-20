@@ -8,60 +8,67 @@ export const cseBtech: DepartmentDetail = {
   shortName: "CSE",
   intake: 60,
   duration: "4 Years",
-  image: "/images/departments/btech-cse.svg",
-  thumbnail: "/images/departments/btech-cse-thumb.svg",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-cse.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-cse.webp",
   href: "/departments/btech/cse",
-  tagline: "Shaping the Architects of Tomorrow's Digital World",
+  tagline: "Innovating the Digital Future Through Code and Systems",
   overview:
-    "The B.Tech in Computer Science & Engineering is one of the flagship programmes at MGMCET. The curriculum is aligned with KTU and covers core computing disciplines including programming, data structures, algorithms, operating systems, databases, web technologies, and software engineering — complemented by modern electives in cloud, DevOps, and full-stack development.",
-  // TODO(content): replace with official vision from the department
+    "The Department of Computer Science & Engineering was established in the year 2011. The department focuses on delivering rigorous education in software systems, algorithms, database architectures, networks, and advanced computing paradigms, preparing graduates to excel in global IT and engineering sectors.",
   vision:
-    "To build globally competent computer science engineers capable of addressing complex challenges with innovation and integrity.",
-  // TODO(content): replace with official mission from the department
+    "To emerge as a Center of Excellence in Computer Science and Engineering education, fostering innovation, research, and socially committed technical professionals.",
   mission:
-    "To provide comprehensive computer science education through quality teaching, hands-on labs, and industry-focused projects that prepare students for diverse career paths.",
+    "Impart high-quality professional education in computing; kindle innovative thinking and research culture through state-of-the-art laboratory infrastructure; and mould competent computer engineers capable of solving complex societal problems.",
   programOutcomes: [
-    // TODO(content): replace with official KTU Programme Outcomes
-    { code: "PO1", description: "Engineering Knowledge: Apply foundational knowledge in mathematics and computing." },
-    { code: "PO2", description: "Problem Analysis: Analyse and formulate computational solutions to complex problems." },
-    { code: "PO3", description: "Design/Development: Design software systems and algorithms meeting specified requirements." },
-    { code: "PO4", description: "Conduct Investigations: Apply research to solve computing challenges." },
-    { code: "PO5", description: "Modern Tool Usage: Use modern IDEs, frameworks, and development tools." },
-    { code: "PO6", description: "Engineer and Society: Appreciate societal impact of computing and software systems." },
-    { code: "PO7", description: "Environment: Consider sustainability in software and system design." },
-    { code: "PO8", description: "Ethics: Uphold professional ethics and intellectual property norms." },
-    { code: "PO9", description: "Team Work: Function effectively in cross-functional software teams." },
-    { code: "PO10", description: "Communication: Present technical ideas clearly to diverse audiences." },
-    { code: "PO11", description: "Project Management: Plan, execute, and deliver software projects on time." },
-    { code: "PO12", description: "Life-long Learning: Continuously update skills in a rapidly evolving field." },
+    { code: "PEO1", description: "Graduates will apply their computing knowledge for the betterment of society." },
+    { code: "PEO2", description: "Graduates will demonstrate capability to identify problems in Computer Science and Engineering, analyze and design optimal software solutions." },
+    { code: "PEO3", description: "Graduates will address technological challenges in advance by applying their analytical and engineering capabilities." },
+    { code: "PEO4", description: "Graduates will face global competition in the field of Information Technology and achieve placement in top reputed organizations." },
   ],
   labs: [
-    // TODO(content): replace with actual lab names from department
-    { name: "Programming Lab", description: "Systems loaded with GCC, Java, Python, and modern IDEs." },
-    { name: "Database Lab", description: "Oracle, MySQL, and MongoDB environments for database coursework." },
-    { name: "Networking & OS Lab", description: "Linux servers, network simulators, and virtual machines." },
-    { name: "Project Development Lab", description: "Dedicated space for final-year and mini-projects." },
-  ],
-  faculty: [
-    // TODO(content): replace with actual HOD and faculty details
     {
-      id: "btech-cse-hod",
-      name: "HOD Name", // TODO(content): replace with real name
-      designation: "Associate Professor & Head of Department",
-      qualification: "M.Tech, Ph.D", // TODO(content): verify
-      isHOD: true,
-      image: "/images/faculty/placeholder-avatar.svg",
+      name: "Programming & Problem Solving Lab",
+      description:
+        "Modern computer laboratory equipped with high-performance desktop systems featuring Intel Core i5 processors, 8 GB RAM, high-speed SSD storage, and LED monitors. Connected via Gigabit Ethernet with uninterrupted high-bandwidth internet connectivity and centralized UPS backup. Provides dual-boot Ubuntu Linux and Windows environments pre-loaded with GCC/G++, Python, Java JDK, and integrated development environments.",
+    },
+    {
+      name: "Software Engineering & Mini Project Lab",
+      description:
+        "Dedicated computing lab powered by Intel Core i5 systems with 8 GB RAM. Configured with modern IDEs, mobile application development toolchains, Git version control, and collaborative project development suites for student coursework and project implementation.",
+    },
+    {
+      name: "Object-Oriented Programming & Networking Lab",
+      description:
+        "High-performance lab environment featuring Intel Core i5 workstations with 8 GB RAM on a Gigabit network. Configured with Java runtime and development kits, networking simulation tools, Wireshark, and socket programming environments.",
+    },
+    {
+      name: "Data Structures & Database Systems Lab",
+      description:
+        "Equipped with Intel Core i5 computing systems and 8 GB RAM running Linux and Windows. Fully installed with relational database management engines, SQL tools, and algorithmic programming platforms for data structure and DBMS practicals.",
+    },
+    {
+      name: "System Software & Microprocessors Lab",
+      description:
+        "Specialized computing lab with Intel Core i5 processors and 8 GB RAM running macro assemblers, MASM, low-level compilers, system debuggers, and simulation suites for system programming coursework.",
+    },
+    {
+      name: "Department Library & Resource Centre",
+      description:
+        "A dedicated department resource library providing reference textbooks, technical conference proceedings, research journals, and project archives.",
     },
   ],
+  faculty: [],
   curriculumLinks: [
-    { label: "KTU B.Tech CSE Syllabus", href: "https://ktu.edu.in/", isPdf: false },
+    { label: "APJ Abdul Kalam Technological University B.Tech CSE Syllabus", href: "https://ktu.edu.in/", isPdf: false },
   ],
-  achievements: [],
+  achievements: [
+    "Consistently high placement rate across premier IT and software development enterprises.",
+    "Active student participation in technical hackathons, coding contests, and open-source contributions.",
+  ],
   placements: {
-    description: "CSE graduates have been placed across top IT, product, and service companies.", // TODO(content): add real placement data and stats
-    topRecruiters: [],
+    description: "Our CSE graduates secure placements across software development, cloud systems, systems engineering, and data analytics.",
+    topRecruiters: ["TCS", "Infosys", "Wipro Technologies", "Cognizant (CTS)", "Mphasis", "UST Global", "IBS Software", "Poornam Infovision", "Comstream Technologies"],
   },
   contact: {
-    email: "cse@mgmcet.ac.in", // TODO(content): verify
+    email: "mail@mgmcet.ac.in",
   },
 };

@@ -8,60 +8,59 @@ export const eceBtech: DepartmentDetail = {
   shortName: "ECE",
   intake: 60,
   duration: "4 Years",
-  image: "/images/departments/btech-ece.svg",
-  thumbnail: "/images/departments/btech-ece-thumb.svg",
+  image: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-ece.webp",
+  thumbnail: "https://ik.imagekit.io/miwqceyia/mgmcet/images/departments/btech-ece.webp",
   href: "/departments/btech/ece",
-  tagline: "Connecting the World Through Technology",
+  tagline: "Pioneering Next-Generation Communications and Embedded Intelligence",
   overview:
-    "The B.Tech in Electronics & Communication Engineering at MGMCET covers the complete spectrum of electronics — from analog circuits and digital systems to embedded systems, VLSI design, signal processing, and wireless communications. The programme is KTU-affiliated and provides strong fundamentals alongside modern technology exposure.",
-  // TODO(content): replace with official vision from the department
+    "The Electronics and Communication Engineering (ECE) Department was started at the inception of the College itself. The Department is backed by highly qualified, efficient and committed faculty members who are periodically deputed to attend national and international seminars and conferences. For effective student guidance and counselling, an advisory system is introduced which includes a dedicated Faculty Advisor system.",
   vision:
-    "To be a center of excellence producing innovative electronics and communication engineers equipped for global industry and research.",
-  // TODO(content): replace with official mission from the department
+    "To mould socially committed Professionals who strive for excellence to meet the challenges of the modern Electronics and Communication industry.",
   mission:
-    "To provide world-class education in electronics and communication engineering through quality teaching, modern labs, and industry partnerships.",
+    "To develop high-quality professionals to meet the growing challenges of the electronics industry; sharpen their problem-solving and innovative skills; and foster an environment of continuous learning and ethical engineering practice.",
   programOutcomes: [
-    // TODO(content): replace with official KTU Programme Outcomes
-    { code: "PO1", description: "Engineering Knowledge: Apply mathematical and scientific fundamentals to ECE problems." },
-    { code: "PO2", description: "Problem Analysis: Analyse electronic systems and signal processing challenges." },
-    { code: "PO3", description: "Design/Development: Design analog, digital, and communication systems." },
-    { code: "PO4", description: "Conduct Investigations: Use instruments and simulation tools to investigate ECE problems." },
-    { code: "PO5", description: "Modern Tool Usage: Use simulation tools like MATLAB, SPICE, and EDA software." },
-    { code: "PO6", description: "Engineer and Society: Understand the role of ECE in society and critical infrastructure." },
-    { code: "PO7", description: "Environment: Design energy-efficient electronic systems." },
-    { code: "PO8", description: "Ethics: Apply ethical practices in hardware design and spectrum usage." },
-    { code: "PO9", description: "Team Work: Collaborate on complex electronic system projects." },
-    { code: "PO10", description: "Communication: Present circuit designs and results clearly." },
-    { code: "PO11", description: "Project Management: Plan and deliver embedded and electronics projects." },
-    { code: "PO12", description: "Life-long Learning: Keep pace with advances in electronics, RF, and wireless technology." },
+    { code: "PEO1", description: "Analyse, plan, design and develop innovative electronic products." },
+    { code: "PEO2", description: "Apply the knowledge acquired in Electronics and Communication Engineering to solve socially relevant problems and pursue higher education or research." },
+    { code: "PEO3", description: "Indulge in continuous learning for career enhancement to adapt to changing professional scenarios." },
+    { code: "PEO4", description: "Work effectively in multidisciplinary teams, using technical knowledge attained to achieve project objectives." },
+    { code: "PEO5", description: "Understand professional responsibilities, engineering ethics, and environmental stewardship." },
+    { code: "PEO6", description: "Communicate and demonstrate effectively and exhibit strong leadership skills." },
+    { code: "PSO1", description: "Analyze and design analog & digital circuits and systems for given specifications and applications." },
+    { code: "PSO2", description: "Design and implement hardware-software co-designs for embedded systems, signal processing and communication." },
+    { code: "PSO3", description: "Familiarize modern design tools and simulation software to ease the implementation of real-time systems." },
+    { code: "PSO4", description: "Exhibit ethics, teamwork and leadership in their profession and adapt to current trends with a zest for lifelong learning." },
   ],
   labs: [
-    // TODO(content): replace with actual lab names
-    { name: "Electronics Lab", description: "Analog and digital circuits workbench with oscilloscopes and signal generators." },
-    { name: "Communication Lab", description: "RF trainers, spectrum analyzers, and DSP kits." },
-    { name: "Embedded Systems Lab", description: "Microcontrollers, Raspberry Pi, Arduino, and IoT development boards." },
-    { name: "VLSI Lab", description: "EDA tools for VHDL/Verilog simulation and synthesis." },
-  ],
-  faculty: [
-    // TODO(content): replace with actual HOD and faculty
     {
-      id: "btech-ece-hod",
-      name: "HOD Name", // TODO(content): replace with real name
-      designation: "Associate Professor & Head of Department",
-      qualification: "M.Tech, Ph.D (Pursuing)", // TODO(content): verify
-      isHOD: true,
-      image: "/images/faculty/placeholder-avatar.svg",
+      name: "Electronic Circuits and IC Lab",
+      description: "Equipped with cathode-ray oscilloscopes (CROs), dual power supplies, function generators, digital multimeters, voltmeters, ammeters, and analog and digital IC testers for comprehensive electronics circuit experimentation.",
+    },
+    {
+      name: "Communication Engineering Lab",
+      description: "Facilities to study modulation and demodulation techniques, RF transmitters, optical receivers, antennas, transmission lines, and spectrum analyzers.",
+    },
+    {
+      name: "Microprocessor & Microcontroller Lab",
+      description: "Equipped with 8085 and 8051 trainer kits, peripheral interfacing modules, Keil IDE, and Proteus simulation suites for embedded system design.",
+    },
+    {
+      name: "Advanced Electronics & Systems Lab",
+      description: "Advanced hardware and software experimentation including microcomputer systems, DSP processing platforms, and VLSI design and simulation tools.",
     },
   ],
+  faculty: [],
   curriculumLinks: [
-    { label: "KTU B.Tech ECE Syllabus", href: "https://ktu.edu.in/", isPdf: false },
+    { label: "APJ Abdul Kalam Technological University B.Tech ECE Syllabus", href: "https://ktu.edu.in/", isPdf: false },
   ],
-  achievements: [],
+  achievements: [
+    "Comprehensive student advisory and mentorship framework.",
+    "Student placements in leading telecom, embedded systems, and semiconductor firms.",
+  ],
   placements: {
-    description: "ECE graduates have been placed in electronics, telecom, and embedded systems companies.", // TODO(content): add real data
-    topRecruiters: [],
+    description: "Graduates are recruited across embedded systems, VLSI design, telecom network engineering, and IoT hardware.",
+    topRecruiters: ["VVDN Technologies", "Tessolve Semiconductors", "SFO Technologies", "NeST", "Cognizant", "TCS", "Infosys", "Wipro"],
   },
   contact: {
-    email: "ece@mgmcet.ac.in", // TODO(content): verify
+    email: "mail@mgmcet.ac.in",
   },
 };

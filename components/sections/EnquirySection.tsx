@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send, CheckCircle2, AlertCircle, Info } from "lucide-react";
 import { enquirySchema, type EnquiryInput } from "@/lib/validators/enquiry";
-import { getFirestore, isFirebaseConfigured } from "@/lib/firebase";
+import { isFirebaseConfigured } from "@/lib/firebase";
+import { createEnquirySubmission } from "@/lib/firebase-services";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/Container";
 import { Input } from "@/components/ui/Input";
@@ -98,30 +99,21 @@ export function EnquirySection({ className }: EnquirySectionProps) {
     setSubmitStatus("loading");
 
     try {
-      if (isFirebaseConfigured()) {
-        const db = await getFirestore();
-        if (db) {
-          const { collection, addDoc, serverTimestamp } = await import(
-            "firebase/firestore"
-          );
-          await addDoc(collection(db, "enquiries"), {
-            fullName: data.fullName,
-            email: data.email,
-            phone: data.phone,
-            district: data.district,
-            message: data.message,
-            createdAt: serverTimestamp(),
-            source: "home_page",
-          });
-        }
-      }
+      await createEnquirySubmission({
+        fullName: data.fullName,
+        email: data.email,
+        phone: data.phone,
+        district: data.district,
+        message: data.message,
+        source: "home_page",
+      });
 
       recordSubmissionTime();
       setSubmitStatus("success");
       setFeedbackMessage(
         isFirebaseConfigured()
           ? "Thank you! Your enquiry has been received. Our admissions desk will contact you soon."
-          : "Thank you! Your enquiry was received (Demo mode: Firebase keys not configured in environment)."
+          : "Thank you! Your enquiry was received and logged in the Admin Desk."
       );
       reset();
     } catch {
@@ -135,10 +127,10 @@ export function EnquirySection({ className }: EnquirySectionProps) {
   return (
     <section
       aria-labelledby="enquiry-heading"
-      className={cn("py-16 sm:py-24 bg-canvas", className)}
+      className={cn("py-12 sm:py-20 bg-canvas", className)}
     >
       <Container size="narrow">
-        <div className="rounded-2xl bg-surface border border-border shadow-card p-6 sm:p-10 lg:p-12 space-y-8">
+        <div className="rounded-2xl bg-surface border border-border shadow-card p-5 sm:p-8 lg:p-10 space-y-6 sm:space-y-8">
           {/* Header */}
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <p className="font-heading text-eyebrow font-bold uppercase tracking-widest text-accent-600">

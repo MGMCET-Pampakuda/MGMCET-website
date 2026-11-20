@@ -12,16 +12,18 @@ export const home: HomeContent = {
       headline: "Spark Your Future",
       headlineAccent: "at MGMCET",
       description:
-        "Transform your passion into expertise with cutting edge technologies, state of the art facilities, and industry connections at Pampakuda's premier engineering institution.",
-      image: "/images/hero/hero-1.svg",
+        "Transform your passion into expertise with cutting-edge technologies, state-of-the-art facilities, and strong industry connections at Pampakuda's premier engineering institution.",
+      image: "/images/hero/campus-main.webp",
       imageAlt: "MGM College of Engineering and Technology campus, Pampakuda",
       primaryCta: { label: "Explore Programs", href: "/departments" },
       secondaryCta: {
-        label: "Watch Campus Tour",
-        href: "#campus-tour-video",
-        isVideoModal: true,
+        label: "Explore Campus Life",
+        href: "/campus-life",
       },
-      badges: ["40+ Industry Partners / Global Connections", "A+ AICTE Approved, Affiliated to KTU"],
+      badges: [
+        "40+ Industry Partners & Placement Drives",
+        "AICTE Approved • Affiliated to KTU",
+      ],
     },
     {
       id: "slide-2",
@@ -29,11 +31,11 @@ export const home: HomeContent = {
       headline: "Build. Innovate.",
       headlineAccent: "Lead the Future.",
       description:
-        "Join B.Tech, M.Tech, and Polytechnic programmes across AI, CSE, ECE, Mechanical Engineering and more — backed by AICTE approval and KTU affiliation.",
-      image: "/images/hero/hero-2.svg",
-      imageAlt: "Students working in MGMCET campus labs",
+        "Join B.Tech, M.Tech, and Polytechnic programmes across AI & ML, Cyber Security, CSE, ECE, Mechanical Engineering and more — backed by AICTE approval and KTU affiliation.",
+      image: "/images/hero/campus-front.webp",
+      imageAlt: "MGM College campus building and academic block",
       primaryCta: { label: "View B.Tech Programs", href: "/departments/btech" },
-      secondaryCta: { label: "Apply Now", href: site.applyNowUrl, isVideoModal: false },
+      secondaryCta: { label: "Apply Now", href: site.applyNowUrl },
     },
     {
       id: "slide-3",
@@ -41,9 +43,9 @@ export const home: HomeContent = {
       headline: "Learn. Make Friends.",
       headlineAccent: "Create Memories.",
       description:
-        "From idea labs to cultural fests, student-led clubs to sports arenas — our campus is built to unlock your full potential at Pampakuda.",
-      image: "/images/hero/hero-3.svg",
-      imageAlt: "Students engaged in campus activities at MGMCET",
+        "From state-of-the-art labs to cultural fests, student-led clubs, sports meets and award-winning NSS units — our campus is built to unlock your full potential.",
+      image: "/images/hero/campus-academic.webp",
+      imageAlt: "Campus academic atmosphere at MGMCET",
       primaryCta: { label: "Explore Campus Life", href: "/campus-life" },
       secondaryCta: { label: "Admissions", href: "/admissions" },
     },
@@ -58,25 +60,25 @@ export const home: HomeContent = {
       iconName: "Award",
     },
     {
-      id: "engineering-programs",
-      value: "7",
-      animated: false,
-      label: "Engineering Programs",
+      id: "educational-programs",
+      value: "15+",
+      animated: true,
+      label: "Educational Programs",
       iconName: "GraduationCap",
     },
     {
-      id: "industry-partners",
-      value: "40+",
+      id: "activity-clubs",
+      value: "10+",
       animated: true,
-      label: "Industry Partners",
-      iconName: "Handshake",
+      label: "Activity Clubs",
+      iconName: "Users",
     },
     {
-      id: "aicte-approved",
-      value: "A+",
-      animated: false,
-      label: "AICTE Approved",
-      iconName: "BadgeCheck",
+      id: "placement-success",
+      value: "96%",
+      animated: true,
+      label: "Placement Rate (2023)",
+      iconName: "TrendingUp",
     },
   ],
 
@@ -85,8 +87,8 @@ export const home: HomeContent = {
     title: "Empowering Minds, Shaping Tomorrow",
     description:
       "MGM College of Engineering & Technology, a renowned institution committed to developing globally competent professionals in technology and management with refined attitudes. With a mission to provide teaching and learning at international standards, we prepare students for the challenges of a rapidly evolving world.",
-    image: "/images/campus/campus-main.svg",
-    imageAlt: "MGM College of Engineering and Technology campus",
+    image: "/images/campus/about-campus.webp",
+    imageAlt: "MGM College of Engineering and Technology campus at Pampakuda",
     imageCaption: "Where Ideas Grow",
     cta: { label: "Read More About MGMCET", href: "/about" },
     vision: {
@@ -188,7 +190,7 @@ export const home: HomeContent = {
     title: "Learn. Make Friends. Create Memories.",
     description:
       "Beyond Books. Into the Real World — Explore, Express, Evolve. At MGMCET, we believe that education goes hand in hand with experience. From idea labs to cultural fests, student-led clubs to sports arenas — our campus is built to unlock your full potential.",
-    image: "/images/campus/campus-life.svg",
+    image: "https://ik.imagekit.io/miwqceyia/mgmcet/gallery/2025/arts-fest.webp",
     imageAlt: "Students enjoying campus life at MGMCET",
     imageCaption: "Where Life Meets MGM",
     cta: { label: "Explore Campus Life", href: "/campus-life" },
@@ -209,10 +211,10 @@ export const home: HomeContent = {
 
   directorQuote: {
     quote:
-      "At MGMCET, we are committed to creating an academic ecosystem that inspires excellence and fuels innovation preparing students to thrive in a changing world.",
-    name: "Director, MGMCET", // TODO(content): replace with Director's actual name
-    designation: "Director, MGMCET, Pampakuda",
-    image: "/images/about/director.svg",
+      "At MGMCET, we are committed to creating an academic ecosystem that inspires excellence and fuels innovation, preparing students to thrive in a changing world.",
+    name: "Mr. H. Ahinus",
+    designation: "Executive Director, MGMCET",
+    image: "/images/leadership/director-h-ahinus.webp",
   },
 
   ctaBanner: {
@@ -221,7 +223,6 @@ export const home: HomeContent = {
     description:
       "Ready to Begin Your Journey? Join MGM College of Engineering and Technology to unlock your potential and build a successful career in the field of engineering and technology.",
     primaryCta: { label: "Apply Now", href: site.applyNowUrl },
-    secondaryCta: { label: "Download Prospectus", href: site.prospectusUrl },
   },
 
   newsCount: 4,

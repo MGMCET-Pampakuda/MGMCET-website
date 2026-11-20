@@ -44,7 +44,20 @@ export interface FooterConfig {
   showSocial: boolean;
 }
 
+/** Single quick-action link in the top utility bar */
+export interface TopBarLink {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+}
+
+/** Top utility bar (dark green strip above the main nav) */
+export interface TopBarConfig {
+  links: TopBarLink[];
+}
+
 export interface NavigationConfig {
   header: HeaderNav;
+  topBar: TopBarConfig;
   footer: FooterConfig;
 }

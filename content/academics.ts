@@ -1,76 +1,175 @@
 /**
  * Academics section content.
- * Committee/policy pages use ContentPage template.
- * Document pages (NIRF, AICTE Approval, SC-ST, Mandatory Disclosure) are in downloads.ts.
+ * Real content from MGM College of Engineering and Technology (https://www.mgmcet.ac.in/academics)
  */
 
-export interface AcademicsSectionBlock {
-  title: string;
-  body?: string;
-  items?: string[];
-}
+import type {
+  IqacMember,
+  MouPartner,
+  AcademicsSectionBlock,
+  FocusAreaBlock,
+  DegreeCardBlock,
+  EmergencyCalloutBlock,
+  StepProcedureBlock,
+  AcademicsOverviewContent,
+  IqacPageContent,
+  AcademicsPageContent,
+  MousPageContent,
+  AcademicsContent,
+} from "@/types";
 
-export interface FocusAreaBlock {
-  title: string;
-  description: string;
-}
+export type {
+  IqacMember,
+  MouPartner,
+  AcademicsSectionBlock,
+  FocusAreaBlock,
+  DegreeCardBlock,
+  EmergencyCalloutBlock,
+  StepProcedureBlock,
+  AcademicsOverviewContent,
+  IqacPageContent,
+  AcademicsPageContent,
+  MousPageContent,
+  AcademicsContent,
+};
 
-export interface DegreeCardBlock {
-  badge: string;
-  title: string;
-  description: string;
-  href: string;
-  linkLabel: string;
-}
+export const defaultIqacMembers: IqacMember[] = [
+  {
+    id: "iqac-1",
+    role: "Chairperson",
+    name: "Dr. Dhanya G",
+    designation: "Principal",
+    department: "Administration",
+  },
+  {
+    id: "iqac-2",
+    role: "Management Representative",
+    name: "Er. Ahinus H",
+    designation: "Director",
+    department: "Management",
+  },
+  {
+    id: "iqac-3",
+    role: "Local Society Representative",
+    name: "Sri. Nevin George",
+    designation: "President, Pampakuda Block Panchayath",
+    department: "Local Society",
+  },
+  {
+    id: "iqac-4",
+    role: "IQAC Coordinator",
+    name: "Ms. Neethu B",
+    designation: "Asst. Prof.",
+    department: "EEE",
+  },
+  {
+    id: "iqac-5",
+    role: "Representative from Industry",
+    name: "Sri. Nirmal S.",
+    designation: "Senior System Engineer",
+    department: "Robert Bosch, Coimbatore",
+  },
+  {
+    id: "iqac-6",
+    role: "Department Representative",
+    name: "Ms. Jyothilekshmi S",
+    designation: "Asst. Prof.",
+    department: "CSE",
+  },
+  {
+    id: "iqac-7",
+    role: "Department Representative",
+    name: "Mr. Linto Jose K",
+    designation: "Asst. Prof.",
+    department: "ME",
+  },
+  {
+    id: "iqac-8",
+    role: "Department Representative",
+    name: "Dr. Sajitha Kumari T",
+    designation: "Asso. Prof.",
+    department: "S&H",
+  },
+  {
+    id: "iqac-9",
+    role: "Department Representative",
+    name: "Ms. Neethu Joy",
+    designation: "Asst. Prof.",
+    department: "ECE",
+  },
+  {
+    id: "iqac-10",
+    role: "Department Representative",
+    name: "Mr. Sreejith K Babu",
+    designation: "Asst. Prof.",
+    department: "CE",
+  },
+];
 
-export interface EmergencyCalloutBlock {
-  title: string;
-  contactLine: string;
-  details: string;
-}
+export const defaultMouPartners: MouPartner[] = [
+  {
+    id: "mou-1",
+    companyName: "National Institute of Speech and Hearing",
+    location: "Thiruvananthapuram, Kerala",
+    category: "Assistive Technology & Research",
+    scope: "Collaborative research, assistive engineering solutions, student internships, and awareness initiatives.",
+    status: "Active",
+  },
+  {
+    id: "mou-2",
+    companyName: "Axianta MEP & QC",
+    location: "1st floor, Saniya Building Pump Junction, Aluva, Kerala 683101",
+    category: "MEP & Quality Control Engineering",
+    scope: "Specialized MEP technical training, HVAC design, industrial site visits, quality assurance certification, and direct campus recruitment.",
+    status: "Active",
+  },
+  {
+    id: "mou-3",
+    companyName: "Montgolfier Engineering & Solutions Pvt Ltd",
+    location: "Ernakulam, Kerala",
+    category: "Mechanical & Aerospace Engineering",
+    scope: "Technical workshops, advanced CAD/CAM/CAE simulations, live design projects, and industrial internships.",
+    status: "Active",
+  },
+  {
+    id: "mou-4",
+    companyName: "Crysol Technologies Pvt Ltd",
+    location: "Kochi, Kerala",
+    category: "IT Solutions & Software Development",
+    scope: "Software engineering internships, full-stack development bootcamps, real-world industry projects, and student placement assistance.",
+    status: "Active",
+  },
+  {
+    id: "mou-5",
+    companyName: "Progressive Cybernetics Pvt Ltd",
+    location: "Muvattupuzha, Ernakulam",
+    category: "Industrial Automation & Cybernetics",
+    scope: "Industrial automation systems, PLC/SCADA instrumentation, robotics exposure, and faculty-student technical consultancy.",
+    status: "Active",
+  },
+  {
+    id: "mou-6",
+    companyName: "Technovalley Software India Pvt Ltd",
+    location: "Level 4, ATS Grand, opposite Highway Garden, Bypass, Edappally, Ernakulam, Kerala 682024",
+    category: "Cybersecurity, Cloud & IT Services",
+    scope: "Cyber security and network infrastructure training, cloud certifications, hackathons, and technology incubation.",
+    status: "Active",
+  },
+];
 
-export interface StepProcedureBlock {
-  step: number;
-  title: string;
-  description: string;
-}
-
-export interface AcademicsOverviewContent {
-  title: string;
-  description: string;
-  badge: string;
-  introTitle: string;
-  introBody: string;
-  programCards: DegreeCardBlock[];
-  obeTitle: string;
-  obeBody: string;
-  governanceTitle: string;
-  governanceBody: string;
-  statutoryCells: Array<{ name: string; description: string }>;
-}
-
-export interface AcademicsPageContent {
-  title: string;
-  badge: string;
-  description: string;
-  eyebrow?: string;
-  body: string;
-  blocks?: AcademicsSectionBlock[];
-  focusAreas?: FocusAreaBlock[];
-  emergencyCallout?: EmergencyCalloutBlock;
-  procedures?: StepProcedureBlock[];
-  relatedLinks?: Array<{ label: string; href: string; isPdf?: boolean; isExternal?: boolean }>;
-}
-
-export interface AcademicsContent {
-  overview: AcademicsOverviewContent;
-  iqac: AcademicsPageContent;
-  antiRagging: AcademicsPageContent;
-  aicteFeedback: AcademicsPageContent;
-  researchAndDevelopment: AcademicsPageContent;
-  grievanceCell: AcademicsPageContent;
-  mous: AcademicsPageContent;
-}
+export const academicsNavItems = [
+  { label: "Overview", href: "/academics" },
+  { label: "IQAC", href: "/academics/iqac" },
+  { label: "NIRF", href: "/academics/nirf" },
+  { label: "MoUs", href: "/academics/mous" },
+  { label: "Anti-Ragging", href: "/academics/anti-ragging" },
+  { label: "AICTE Approval", href: "/academics/aicte-approval" },
+  { label: "SC-ST Committee", href: "/academics/sc-st-committee" },
+  { label: "Mandatory Disclosure", href: "/academics/mandatory-disclosure" },
+  { label: "AICTE Feedback Facility", href: "/academics/aicte-feedback" },
+  { label: "Research and Development", href: "/academics/research-and-development" },
+  { label: "Grievance Cell", href: "/academics/grievance-cell" },
+];
 
 export const academics: AcademicsContent = {
   overview: {
@@ -117,217 +216,156 @@ export const academics: AcademicsContent = {
       },
       {
         name: "Anti-Ragging Squad & Committee",
-        description: "Maintains a strictly zero-tolerance campus environment.",
+        description: "Maintains a strictly zero-tolerance campus environment under Principal's charge.",
       },
       {
-        name: "Grievance Redressal Cell",
-        description: "Provides fair, structured channels for resolving student concerns.",
+        name: "Grievance Redressal and Appeal Committee",
+        description: "Provides fair, structured channels for resolving student and staff concerns.",
       },
       {
-        name: "SC-ST & OBC Committees",
-        description: "Protects rights and ensures inclusive access for marginalized communities.",
+        name: "SC-ST Committee",
+        description: "Protects rights and ensures inclusive access in line with statutory mandates.",
       },
       {
-        name: "Research & Development Cell",
-        description: "Promotes publications, patents, student projects, and hackathons.",
+        name: "Research & Development Cell (MEL-R&D)",
+        description: "On-campus R&D centre established with Marine Electricals (India) Limited.",
       },
     ],
   },
 
   iqac: {
     title: "Internal Quality Assurance Cell (IQAC)",
-    badge: "Academic Governance",
-    eyebrow: "Quality Assurance",
+    badge: "NAAC & Academic Governance",
+    eyebrow: "Quality Consciousness",
     description:
-      "Driving continuous enhancement in teaching-learning, research standards, and administrative accountability across MGMCET.",
-    body: `The Internal Quality Assurance Cell (IQAC) at MGMCET is dedicated to developing a quality culture and sustaining processes that contribute to achieving academic excellence. The IQAC functions as a driving force behind quality initiatives, monitoring outcomes, and ensuring continuous improvement across all academic and administrative activities.
-
-The cell coordinates accreditation activities, implements feedback mechanisms, organizes faculty development programmes, and maintains outcome-based education frameworks in alignment with AICTE and KTU norms.`,
-    // TODO(content): add real IQAC member list, NAAC/AQAR reports, and committee details
-    blocks: [
-      {
-        title: "Core Functions & Strategies",
-        items: [
-          "Development and application of quality benchmarks/parameters for academic and administrative activities of the college.",
-          "Facilitating the creation of a learner-centric environment conducive to quality education and faculty maturation.",
-          "Arrangement for feedback response from students, parents and other stakeholders on quality-related institutional processes.",
-          "Dissemination of information on various quality parameters to higher education stakeholders.",
-          "Organization of inter and intra institutional workshops, seminars on quality-related themes and promotion of quality circles.",
-          "Documentation of the various programmes and activities leading to quality improvement.",
-        ],
-      },
-      {
-        title: "IQAC Committee Composition",
-        body: "The IQAC operates under the chairmanship of the Principal and includes senior faculty heads, administrative officers, management representatives, external industry experts, and student representatives.",
-      },
+      "In conformation with the NAAC directives to maintain momentum of quality consciousness in Higher Education Institutions, MGM College of Engineering & Technology has constituted an Internal Quality Assurance Cell (IQAC).",
+    body: "The IQAC channelizes and systematizes the efforts and measures of the Institution towards academic excellence with the primary objectives of developing a quality system for conscious, consistent and catalytic programmed action to improve academic and administrative performance, and promoting measures for institutional functioning towards quality enhancement through internalization of quality culture and institutionalization of best practices.",
+    objectives: [
+      "To develop a quality system for conscious, consistent and catalytic programmed action to improve the academic and administrative performance.",
+      "To promote measures for institutional functioning towards quality enhancement through internalization of quality culture and institutionalization of best practices.",
     ],
-    relatedLinks: [
-      { label: "NIRF Report", href: "/academics/nirf" },
-      { label: "AICTE Approval", href: "/academics/aicte-approval" },
+    committeeMembers: defaultIqacMembers,
+    functionsTitle: "Functions of the IQAC wing of MGM College of Engineering & Technology",
+    functions: [
+      "Development and application of quality benchmarks/parameters for various academic and administrative activities of the institution.",
+      "Facilitating the creation of a learner-centric environment conducive to quality education and faculty maturation to adopt the required knowledge and technology for participatory teaching and learning process.",
+      "Arrangement for feedback response from students, parents and other stakeholders on quality-related institutional processes.",
+      "Dissemination of information on various quality parameters of higher education.",
+      "Organization of inter and intra institutional workshops, seminars on quality related themes and promotion of quality circles.",
+      "Documentation of the various programmes/activities leading to quality improvement.",
+      "Acting as a nodal agency of the Institution for coordinating quality-related activities, including adoption and dissemination of best practices.",
+      "Development and maintenance of institutional database through MIS for the purpose of maintaining /enhancing the institutional quality.",
+      "Development of Quality Culture in the institution.",
+      "Preparation of the Annual Quality Assurance Report (AQAR) as per guidelines and parameters of NAAC.",
     ],
   },
 
   antiRagging: {
-    title: "Anti-Ragging Committee",
-    badge: "Zero Tolerance • Student Safety",
-    eyebrow: "Campus Safety & Compliance",
+    title: "Anti-Ragging Committee & Cell",
+    badge: "Campus Safety",
+    eyebrow: "Zero Tolerance Policy",
     description:
-      "Zero tolerance policy towards ragging in any form on campus, in hostels, and during college transportation.",
-    body: `MGMCET strictly prohibits ragging in any form on its campus and in hostels. The Anti-Ragging Committee is constituted as per the directives of the Hon'ble Supreme Court of India and UGC/AICTE regulations.
-
-Report Ragging: If you witness or experience ragging, please report immediately to the Anti-Ragging Helpline or the designated Nodal Officer.
-
-The college has constituted a Squad and a Monitoring Cell to ensure strict enforcement of anti-ragging norms. Severe action including expulsion will be taken against offenders.`,
-    // TODO(content): add committee member names, contact details, and signed pledge form link
+      "Strict compliance with AICTE and Supreme Court directives to prevent, prohibit, and eliminate ragging in any form across the college campus and hostels.",
+    body: "Anti-ragging Cell is in operation under the overall charge of the Principal. Students are advised to bring cases of ragging (either in the college campus or in the hostel) to the notice of the Principal/members of anti-ragging committee/ teachers/hostel wardens. The offenders shall be liable for punishment with imprisonment and fine. Offenders may be expelled from the institution.",
     emergencyCallout: {
-      title: "24x7 Anti-Ragging Toll Free Helpline",
-      contactLine: "National Helpline: 1800-180-5522 | Email: helpline@antiragging.in",
-      details:
-        "Students or parents can lodge complaints directly with the College Squad, Head of Institution, or through the national portal without disclosing their identity.",
+      title: "Immediate Reporting",
+      contactLine: "Emergency Helpline: 9946485111 / 7902995111",
+      details: "Report any suspected ragging incidents directly to the Principal or hostel wardens immediately.",
     },
-    blocks: [
+    relatedLinks: [
       {
-        title: "Statutory Penalties Under Law",
-        body: "As per the Kerala Prohibition of Ragging Act, 1998, and AICTE Regulations, anyone found guilty of committing, abetting, or being passive spectators to ragging is liable for:",
-        items: [
-          "Immediate suspension from attending classes and academic privileges.",
-          "Withholding scholarships, fellowships, and other benefits.",
-          "Debarring from appearing in tests/examinations or campus placement drives.",
-          "Suspension or expulsion from the hostel and college mess.",
-          "Rustication or permanent expulsion from the institution with FIR registration with local police authorities.",
-        ],
+        label: "Download Anti-Ragging Committee & Squad Notification (PDF)",
+        href: "/documents/anti-ragging-committee.pdf",
+        isPdf: true,
       },
     ],
-    relatedLinks: [],
   },
 
   aicteFeedback: {
     title: "AICTE Feedback Facility",
-    badge: "Stakeholder Feedback System",
-    eyebrow: "Academics",
+    badge: "Feedback System",
+    eyebrow: "Institutional Transparency",
     description:
-      "Direct feedback portal operated by AICTE enabling students, parents, and faculty to submit feedback and grievances regarding institutional functioning.",
-    body: `AICTE has implemented an online feedback system to enable students, faculty, and other stakeholders to provide feedback on technical institutions and their programmes.
-
-Students and parents may submit feedback through the AICTE portal for grievances related to technical institutions.`,
+      "Official feedback mechanism for students, faculty, and stakeholders via the AICTE Web Portal.",
+    body: "This is to inform all the faculty, staff and students that the feedback facility of students and faculty is available in the AICTE Web-Portal. You may use the below links to use this facility.",
     relatedLinks: [
       {
-        label: "Open AICTE Online Feedback Portal",
-        href: "https://www.aicte-india.org/feedback",
+        label: "AICTE Online Feedback Portal",
+        href: "https://www.aicte-india.org/feedback/",
         isExternal: true,
       },
     ],
-    // TODO(content): verify AICTE feedback portal URL and add institution-specific instructions
   },
 
   researchAndDevelopment: {
     title: "Research and Development",
-    badge: "Innovation & Discovery",
-    eyebrow: "Academics",
+    badge: "Innovation & Research",
+    eyebrow: "MEL-R&D",
     description:
-      "Fostering applied engineering research, student innovation, project mentorship, and intellectual property creation at MGMCET.",
-    body: `MGMCET is committed to fostering a research culture among its faculty and students. The Research and Development Cell encourages applied research, project-based learning, innovation, and collaboration with industry and academia.
-
-The college promotes participation in national-level hackathons, technical paper presentations, and funded research projects. Faculty members are encouraged to pursue sponsored research through government agencies such as DST, SERB, KSCSTE, and DRDO.`,
-    // TODO(content): add list of funded projects, publications, patents, and R&D achievements
+      "On-campus R&D centre established by Marine Electricals (India) Limited, Mumbai.",
+    body: "R&D Centre set up by M/s. Marine Electricals (India) Limited, Mumbai, is functioning in the campus. The faculty and students are actively involved in various projects being implemented through this R&D set-up. Marine Electricals (India) Limited is an integrated technical service provider in the fields of electrical automation and information and communication technology solutions. They offer integrated and multidisciplinary total solutions.",
     focusAreas: [
       {
-        title: "Artificial Intelligence & Data Engineering",
-        description: "Deep learning models, natural language processing, predictive maintenance, and intelligent automation systems.",
+        title: "Electrical Automation",
+        description: "Industrial control systems, power management, and marine electrical architecture.",
       },
       {
-        title: "Cyber Security & Information Assurance",
-        description: "Vulnerability assessment, IoT security, cryptography, and defensive network architecture.",
+        title: "Information & Communication Technology",
+        description: "Multidisciplinary total solutions, embedded hardware, and communication systems.",
       },
       {
-        title: "Renewable Energy & EV Technologies",
-        description: "Electric powertrain simulation, smart battery management, solar PV grid integration, and power electronics.",
+        title: "Industry-Student Projects",
+        description: "Hands-on implementation of live industry projects by undergraduate and postgraduate students.",
       },
-      {
-        title: "Advanced Materials & Structural Mechanics",
-        description: "Composite materials, sustainable construction aggregates, finite element modeling, and thermal design.",
-      },
-    ],
-    relatedLinks: [
-      { label: "Visit MGMCET IEDC Portal", href: "https://iedc.mgmcet.ac.in/", isExternal: true },
     ],
   },
 
   grievanceCell: {
-    title: "Grievance Cell",
-    badge: "Student Welfare & Redressal",
-    eyebrow: "Academics",
+    title: "Grievance Redressal and Appeal Committee",
+    badge: "Student Support",
+    eyebrow: "Fair & Transparent",
     description:
-      "Ensuring a fair, transparent, and confidential mechanism for resolving academic and non-academic concerns of students.",
-    body: `The Student Grievance Cell at MGMCET is established to address academic and non-academic grievances of students in a fair and transparent manner.
-
-Students may submit grievances in person, by letter, or through the designated online form. All complaints are treated with strict confidentiality and resolved within a defined time-frame as per AICTE and KTU guidelines.`,
-    // TODO(content): add committee member names, grievance submission form link, and redressal timelines
+      "Structured redressal mechanism ensuring prompt attention and fair hearing for all academic and campus grievances.",
+    body: "The Grievance Redressal and Appeal Committee at MGMCET operates to address grievances of students and staff in a time-bound and objective manner. For faster response regarding admission-related queries, we suggest you contact us through any of the phone numbers provided on the site: 9946485111 or 7902995111.",
     procedures: [
       {
         step: 1,
-        title: "Submission of Grievance",
-        description: "Any aggrieved student may submit an application in writing to the Principal or via email to the designated grievance officer.",
+        title: "Submission",
+        description: "Submit written or verbal grievance to the Grievance Redressal Committee or Principal's office.",
       },
       {
         step: 2,
-        title: "Preliminary Review & Hearing",
-        description: "The Committee reviews the matter within 7 working days, invites the concerned parties for an impartial hearing if necessary.",
+        title: "Inquiry & Review",
+        description: "The Committee conducts an impartial review involving all relevant parties.",
       },
       {
         step: 3,
-        title: "Resolution & Communication",
-        description: "Actionable recommendations are documented, approved by the Principal, and formally communicated to the applicant within 15 working days.",
+        title: "Resolution",
+        description: "Appropriate action or remedy is communicated within standard procedural timelines.",
       },
-    ],
-    relatedLinks: [
-      { label: "Anti-Ragging", href: "/academics/anti-ragging" },
     ],
   },
 
   mous: {
-    title: "Memoranda of Understanding (MoUs)",
-    badge: "Industry Partnerships",
-    eyebrow: "Academics",
+    title: "Memorandums of Understanding (MoUs)",
+    badge: "Industry Collaborations",
+    eyebrow: "Corporate Partnerships",
     description:
-      "Fostering industry-aligned education, student internships, joint research, and technical consultancy through formal MoUs.",
-    body: `MGMCET has entered into Memoranda of Understanding with leading industries, research organisations, and academic institutions to strengthen industry-academia collaboration.
-
-These MoUs facilitate internships, industrial visits, guest lectures, joint research initiatives, and placement opportunities for students.`,
-    // TODO(content): add list of MoU partners, signing dates, scope, and logos
-    focusAreas: [
+      "Active collaborations with leading corporates and institutions to enhance employability skills and provide practical global exposure.",
+    body: "MGMCET has entered into collaboration with many leading corporates and universities to enhance the employability skills of students also to provide global exposure.",
+    partners: defaultMouPartners,
+    blocks: [
       {
-        title: "Internships & Industrial Training",
-        description: "Students receive hands-on experience in production environments, software development cycles, and hardware testing.",
-      },
-      {
-        title: "Faculty Development & Guest Lectures",
-        description: "Corporate mentors and chief technical officers deliver specialized masterclasses on cutting-edge industry practices.",
-      },
-      {
-        title: "Joint Projects & Hackathons",
-        description: "Collaborative solution engineering addressing real problems faced by manufacturing, IT, and automation firms.",
-      },
-      {
-        title: "Priority Campus Recruitment",
-        description: "Direct access for partner firms to evaluate and hire talented graduates from specialized branches.",
+        title: "Active Industry & Institutional Partners",
+        items: [
+          "National Institute of Speech and Hearing",
+          "Axianta MEP & QC, 1st floor, Saniya Building Pump Junction, Aluva, Kerala 683101",
+          "Montgolfier Engineering & Solutions Pvt Ltd",
+          "Crysol Technologies Pvt Ltd, Kochi",
+          "Progressive Cybernetics Pvt Ltd, Muvattupuzha, Ernakulam",
+          "Technovalley Software India Pvt Ltd, Level 4, ATS Grand, opposite Highway Garden, Bypass, Edappally, Ernakulam, Kerala 682024",
+        ],
       },
     ],
-    relatedLinks: [],
   },
 };
-
-export const academicsNavItems = [
-  { label: "Academics Overview", href: "/academics" },
-  { label: "IQAC", href: "/academics/iqac" },
-  { label: "NIRF", href: "/academics/nirf" },
-  { label: "MoUs", href: "/academics/mous" },
-  { label: "Anti-Ragging Committee", href: "/academics/anti-ragging" },
-  { label: "AICTE Approval", href: "/academics/aicte-approval" },
-  { label: "SC-ST Committee", href: "/academics/sc-st-committee" },
-  { label: "Mandatory Disclosure", href: "/academics/mandatory-disclosure" },
-  { label: "AICTE Feedback", href: "/academics/aicte-feedback" },
-  { label: "Research & Development", href: "/academics/research-and-development" },
-  { label: "Grievance Cell", href: "/academics/grievance-cell" },
-  { label: "IEDC", href: "https://iedc.mgmcet.ac.in/", isExternal: true },
-];
