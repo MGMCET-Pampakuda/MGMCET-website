@@ -50,6 +50,12 @@ function getClubIcon(iconName?: string): React.ElementType {
   return Users;
 }
 
+function hasViceChair(viceChair?: string): boolean {
+  if (!viceChair) return false;
+  const v = viceChair.trim();
+  return v !== "" && v !== "—" && v !== "-" && v.toLowerCase() !== "n/a";
+}
+
 export function ClubsAssociationsSection() {
   const [items, setItems] = useState<ClubAssociationItem[]>(defaultClubsAndAssociations);
   const [activeTab, setActiveTab] = useState<"all" | "club" | "association">("all");
@@ -380,11 +386,11 @@ function ClubsTableView({ items, isClub }: TableViewProps) {
                 <th scope="col" className="py-4 px-5 min-w-[260px]">
                   {isClub ? "Club" : "Association"} &amp; Brief
                 </th>
-                <th scope="col" className="py-4 px-4 min-w-[150px]">
-                  Chairperson
-                </th>
                 <th scope="col" className="py-4 px-4 min-w-[160px]">
                   Staff-in-Charge
+                </th>
+                <th scope="col" className="py-4 px-4 min-w-[150px]">
+                  Chairperson
                 </th>
                 <th scope="col" className="py-4 px-4 min-w-[150px]">
                   Vice Chairperson
@@ -461,22 +467,7 @@ function ClubsTableView({ items, isClub }: TableViewProps) {
                       </div>
                     </td>
 
-                    {/* Chairperson */}
-                    <td className="py-4 px-4 align-top">
-                      <div className="space-y-1 pt-1">
-                        <div className="flex items-center gap-1.5">
-                          <UserCheck className="w-3.5 h-3.5 text-accent-600 shrink-0" />
-                          <span className="font-semibold text-ink-900">
-                            {item.chairperson || "—"}
-                          </span>
-                        </div>
-                        <span className="block text-[11px] text-ink-500 uppercase tracking-wider pl-5">
-                          Student Lead
-                        </span>
-                      </div>
-                    </td>
-
-                    {/* Staff-in-Charge */}
+                    {/* 1. Staff-in-Charge */}
                     <td className="py-4 px-4 align-top">
                       <div className="space-y-1 pt-1">
                         <div className="flex items-center gap-1.5">
@@ -491,27 +482,36 @@ function ClubsTableView({ items, isClub }: TableViewProps) {
                       </div>
                     </td>
 
-                    {/* Vice Chairperson */}
+                    {/* 2. Chairperson */}
                     <td className="py-4 px-4 align-top">
                       <div className="space-y-1 pt-1">
                         <div className="flex items-center gap-1.5">
-                          <Users className="w-3.5 h-3.5 text-ink-400 shrink-0" />
-                          <span
-                            className={
-                              item.viceChairperson && item.viceChairperson !== "—"
-                                ? "font-semibold text-ink-900"
-                                : "text-ink-400 font-mono"
-                            }
-                          >
-                            {item.viceChairperson || "—"}
+                          <UserCheck className="w-3.5 h-3.5 text-accent-600 shrink-0" />
+                          <span className="font-semibold text-ink-900">
+                            {item.chairperson || "—"}
                           </span>
                         </div>
-                        {item.viceChairperson && item.viceChairperson !== "—" && (
+                        <span className="block text-[11px] text-ink-500 uppercase tracking-wider pl-5">
+                          Student Lead
+                        </span>
+                      </div>
+                    </td>
+
+                    {/* 3. Vice Chairperson */}
+                    <td className="py-4 px-4 align-top">
+                      {hasViceChair(item.viceChairperson) && (
+                        <div className="space-y-1 pt-1">
+                          <div className="flex items-center gap-1.5">
+                            <Users className="w-3.5 h-3.5 text-ink-400 shrink-0" />
+                            <span className="font-semibold text-ink-900">
+                              {item.viceChairperson}
+                            </span>
+                          </div>
                           <span className="block text-[11px] text-ink-500 uppercase tracking-wider pl-5">
                             Co-Lead
                           </span>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </td>
                   </tr>
                 );
@@ -571,18 +571,14 @@ function ClubsTableView({ items, isClub }: TableViewProps) {
               )}
 
               {/* Leadership Pill Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2 border-t border-border/60 text-xs">
-                {/* Chairperson */}
-                <div className="p-2.5 rounded-lg bg-canvas border border-border/80">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent-700 block mb-0.5">
-                    Chairperson
-                  </span>
-                  <span className="font-semibold text-ink-900 text-xs">
-                    {item.chairperson || "—"}
-                  </span>
-                </div>
-
-                {/* Staff in Charge */}
+              <div
+                className={`grid gap-2 pt-2 border-t border-border/60 text-xs ${
+                  hasViceChair(item.viceChairperson)
+                    ? "grid-cols-1 sm:grid-cols-3"
+                    : "grid-cols-1 sm:grid-cols-2"
+                }`}
+              >
+                {/* 1. Staff in Charge */}
                 <div className="p-2.5 rounded-lg bg-canvas border border-border/80">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-brand-800 block mb-0.5">
                     Staff-in-Charge
@@ -592,15 +588,27 @@ function ClubsTableView({ items, isClub }: TableViewProps) {
                   </span>
                 </div>
 
-                {/* Vice Chairperson */}
+                {/* 2. Chairperson */}
                 <div className="p-2.5 rounded-lg bg-canvas border border-border/80">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-ink-500 block mb-0.5">
-                    Vice Chairperson
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-accent-700 block mb-0.5">
+                    Chairperson
                   </span>
                   <span className="font-semibold text-ink-900 text-xs">
-                    {item.viceChairperson || "—"}
+                    {item.chairperson || "—"}
                   </span>
                 </div>
+
+                {/* 3. Vice Chairperson (Only if present) */}
+                {hasViceChair(item.viceChairperson) && (
+                  <div className="p-2.5 rounded-lg bg-canvas border border-border/80">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-ink-500 block mb-0.5">
+                      Vice Chairperson
+                    </span>
+                    <span className="font-semibold text-ink-900 text-xs">
+                      {item.viceChairperson}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {item.href && (
@@ -680,14 +688,7 @@ function ClubsCardView({ items }: { items: ClubAssociationItem[] }) {
 
               {/* Leadership Team Box */}
               <div className="pt-3 border-t border-border/70 space-y-2">
-                <div className="flex items-center justify-between text-xs py-1 border-b border-border/40">
-                  <span className="text-ink-500 flex items-center gap-1.5">
-                    <UserCheck className="w-3.5 h-3.5 text-accent-600" />
-                    Chairperson:
-                  </span>
-                  <span className="font-semibold text-ink-900">{item.chairperson || "—"}</span>
-                </div>
-
+                {/* 1. Staff-in-Charge */}
                 <div className="flex items-center justify-between text-xs py-1 border-b border-border/40">
                   <span className="text-ink-500 flex items-center gap-1.5">
                     <GraduationCap className="w-3.5 h-3.5 text-brand-700" />
@@ -696,15 +697,31 @@ function ClubsCardView({ items }: { items: ClubAssociationItem[] }) {
                   <span className="font-semibold text-ink-900">{item.staffInCharge || "—"}</span>
                 </div>
 
-                <div className="flex items-center justify-between text-xs py-1">
+                {/* 2. Chairperson */}
+                <div
+                  className={`flex items-center justify-between text-xs py-1 ${
+                    hasViceChair(item.viceChairperson) ? "border-b border-border/40" : ""
+                  }`}
+                >
                   <span className="text-ink-500 flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5 text-ink-400" />
-                    Vice Chairperson:
+                    <UserCheck className="w-3.5 h-3.5 text-accent-600" />
+                    Chairperson:
                   </span>
-                  <span className="font-semibold text-ink-900">
-                    {item.viceChairperson || "—"}
-                  </span>
+                  <span className="font-semibold text-ink-900">{item.chairperson || "—"}</span>
                 </div>
+
+                {/* 3. Vice Chairperson (Only if present) */}
+                {hasViceChair(item.viceChairperson) && (
+                  <div className="flex items-center justify-between text-xs py-1">
+                    <span className="text-ink-500 flex items-center gap-1.5">
+                      <Users className="w-3.5 h-3.5 text-ink-400" />
+                      Vice Chairperson:
+                    </span>
+                    <span className="font-semibold text-ink-900">
+                      {item.viceChairperson}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
 

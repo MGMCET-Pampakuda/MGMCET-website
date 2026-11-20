@@ -67,7 +67,7 @@ export const defaultClubsAndAssociations: ClubAssociationItem[] = [
       "A technical innovation hub specializing in Unmanned Aerial Vehicles (UAVs). Members engage in hands-on drone fabrication, flight telemetry, aerodynamic simulation, autonomous obstacle navigation, and aerial photography workshops.",
     chairperson: "Aswin C S",
     staffInCharge: "Aswathy Ponnappan",
-    viceChairperson: "—",
+    viceChairperson: "",
     iconName: "Plane",
     order: 5,
     status: "Active",

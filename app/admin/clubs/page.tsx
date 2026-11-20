@@ -72,6 +72,12 @@ function renderClubIcon(iconName?: string) {
   return <IconComp className="w-4 h-4" />;
 }
 
+function hasViceChair(viceChair?: string): boolean {
+  if (!viceChair) return false;
+  const v = viceChair.trim();
+  return v !== "" && v !== "—" && v !== "-" && v.toLowerCase() !== "n/a";
+}
+
 interface PageProps {
   onOpenMobileMenu?: () => void;
 }
@@ -444,11 +450,11 @@ export default function AdminClubsPage({ onOpenMobileMenu = () => {} }: PageProp
                   <th scope="col" className="py-3 px-4 min-w-[200px]">
                     Organization &amp; Category
                   </th>
-                  <th scope="col" className="py-3 px-4 min-w-[130px]">
-                    Chairperson
-                  </th>
                   <th scope="col" className="py-3 px-4 min-w-[140px]">
                     Staff-in-Charge
+                  </th>
+                  <th scope="col" className="py-3 px-4 min-w-[130px]">
+                    Chairperson
                   </th>
                   <th scope="col" className="py-3 px-4 min-w-[130px]">
                     Vice Chairperson
@@ -557,15 +563,7 @@ export default function AdminClubsPage({ onOpenMobileMenu = () => {} }: PageProp
                           </div>
                         </td>
 
-                        {/* Chairperson */}
-                        <td className="py-3.5 px-4">
-                          <div className="flex items-center gap-1.5 font-semibold text-ink-900 text-xs">
-                            <UserCheck className="w-3.5 h-3.5 text-accent-600 shrink-0" />
-                            <span>{item.chairperson || "—"}</span>
-                          </div>
-                        </td>
-
-                        {/* Staff-in-Charge */}
+                        {/* 1. Staff-in-Charge */}
                         <td className="py-3.5 px-4">
                           <div className="flex items-center gap-1.5 font-semibold text-ink-900 text-xs">
                             <GraduationCap className="w-3.5 h-3.5 text-brand-700 shrink-0" />
@@ -573,20 +571,26 @@ export default function AdminClubsPage({ onOpenMobileMenu = () => {} }: PageProp
                           </div>
                         </td>
 
-                        {/* Vice Chairperson */}
+                        {/* 2. Chairperson */}
                         <td className="py-3.5 px-4">
-                          <div className="flex items-center gap-1.5 text-xs text-ink-700">
-                            <Users className="w-3.5 h-3.5 text-ink-400 shrink-0" />
-                            <span
-                              className={
-                                item.viceChairperson && item.viceChairperson !== "—"
-                                  ? "font-semibold text-ink-900"
-                                  : "text-ink-400 font-mono"
-                              }
-                            >
-                              {item.viceChairperson || "—"}
-                            </span>
+                          <div className="flex items-center gap-1.5 font-semibold text-ink-900 text-xs">
+                            <UserCheck className="w-3.5 h-3.5 text-accent-600 shrink-0" />
+                            <span>{item.chairperson || "—"}</span>
                           </div>
+                        </td>
+
+                        {/* 3. Vice Chairperson */}
+                        <td className="py-3.5 px-4">
+                          {hasViceChair(item.viceChairperson) ? (
+                            <div className="flex items-center gap-1.5 text-xs text-ink-700">
+                              <Users className="w-3.5 h-3.5 text-ink-400 shrink-0" />
+                              <span className="font-semibold text-ink-900">
+                                {item.viceChairperson}
+                              </span>
+                            </div>
+                          ) : (
+                            <span className="text-ink-400 text-xs italic">None</span>
+                          )}
                         </td>
 
                         {/* Status */}
@@ -726,22 +730,8 @@ export default function AdminClubsPage({ onOpenMobileMenu = () => {} }: PageProp
                 />
               </div>
 
-              {/* Chairperson & Staff-in-Charge */}
+              {/* Staff-in-Charge & Chairperson */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block font-semibold text-ink-800 mb-1">
-                    Chairperson (Student Lead) *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Sana Meharin K"
-                    value={chairperson}
-                    onChange={(e) => setChairperson(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-border bg-canvas text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-600"
-                  />
-                </div>
-
                 <div>
                   <label className="block font-semibold text-ink-800 mb-1">
                     Staff-in-Charge (Faculty Advisor) *
@@ -755,17 +745,31 @@ export default function AdminClubsPage({ onOpenMobileMenu = () => {} }: PageProp
                     className="w-full px-3 py-2 rounded-xl border border-border bg-canvas text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-600"
                   />
                 </div>
+
+                <div>
+                  <label className="block font-semibold text-ink-800 mb-1">
+                    Chairperson (Student Lead) *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Sana Meharin K"
+                    value={chairperson}
+                    onChange={(e) => setChairperson(e.target.value)}
+                    className="w-full px-3 py-2 rounded-xl border border-border bg-canvas text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-600"
+                  />
+                </div>
               </div>
 
               {/* Vice Chairperson & Icon */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block font-semibold text-ink-800 mb-1">
-                    Vice Chairperson (Student Co-lead)
+                    Vice Chairperson (Student Co-lead, Optional)
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Shamilin Shaji (or leave blank / —)"
+                    placeholder="e.g. Shamilin Shaji (leave blank if none)"
                     value={viceChairperson}
                     onChange={(e) => setViceChairperson(e.target.value)}
                     className="w-full px-3 py-2 rounded-xl border border-border bg-canvas text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-600"
