@@ -37,6 +37,8 @@ const caveat = Caveat({
 import { DEFAULT_KEYWORDS } from "@/lib/seo";
 import { getCollegeJsonLd } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 /** Root metadata — overridden per page via generateMetadata */
 export const metadata: Metadata = {
@@ -127,6 +129,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
