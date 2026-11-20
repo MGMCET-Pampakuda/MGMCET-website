@@ -6,7 +6,6 @@ import {
   Menu,
   ExternalLink,
   CloudCheck,
-  HardDrive,
 } from "lucide-react";
 import { isFirebaseConfigured } from "@/lib/firebase";
 import { useAdminUI } from "./AdminLayoutClient";
@@ -61,20 +60,16 @@ export function AdminHeader({
           className={`hidden md:inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${
             isFbConnected
               ? "bg-emerald-50 text-emerald-800 border-emerald-200"
-              : "bg-amber-50 text-amber-800 border-amber-200"
+              : "bg-red-50 text-red-800 border-red-200"
           }`}
           title={
             isFbConnected
               ? "Connected to live Google Firebase Firestore"
-              : "Operating in fast Local Storage demo mode"
+              : "Firebase disconnected or environment variables not loaded"
           }
         >
-          {isFbConnected ? (
-            <CloudCheck className="h-3.5 w-3.5 text-emerald-600" />
-          ) : (
-            <HardDrive className="h-3.5 w-3.5 text-amber-600" />
-          )}
-          <span>{isFbConnected ? "Firebase Live" : "Local Mode"}</span>
+          <CloudCheck className={`h-3.5 w-3.5 ${isFbConnected ? "text-emerald-600" : "text-red-500"}`} />
+          <span>{isFbConnected ? "Firebase Live" : "Firebase Disconnected"}</span>
         </div>
 
         {/* Custom page action buttons */}

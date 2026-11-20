@@ -217,7 +217,7 @@ export function AdminSidebar({ onCloseMobile }: AdminSidebarProps) {
                 {user?.displayName || "Admin Desk"}
               </p>
               <p className="text-[10px] text-white/50 truncate">
-                {user?.email || "admin@mgmcet.ac.in"}
+                {user?.email || "Authenticated Officer"}
               </p>
             </div>
           </div>

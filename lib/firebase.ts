@@ -21,8 +21,6 @@ let db: Firestore | null = null;
 let auth: Auth | null = null;
 let storage: FirebaseStorage | null = null;
 
-const STORAGE_KEY_CUSTOM_CONFIG = "mgmcet_custom_firebase_config";
-
 export interface FirebaseConfigParams {
   apiKey?: string;
   authDomain?: string;
@@ -33,22 +31,8 @@ export interface FirebaseConfigParams {
   measurementId?: string;
 }
 
-/** Get current effective config (from env or custom browser storage override) */
+/** Get Firebase configuration strictly from environment variables (.env) */
 export function getFirebaseConfig(): FirebaseConfigParams {
-  if (typeof window !== "undefined") {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY_CUSTOM_CONFIG);
-      if (stored) {
-        const parsed = JSON.parse(stored);
-        if (parsed?.apiKey && parsed?.projectId) {
-          return parsed;
-        }
-      }
-    } catch {
-      // ignore
-    }
-  }
-
   return {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -60,22 +44,7 @@ export function getFirebaseConfig(): FirebaseConfigParams {
   };
 }
 
-/** Set custom browser-level Firebase config override (for instant in-dashboard setup) */
-export function saveCustomFirebaseConfig(config: FirebaseConfigParams | null): void {
-  if (typeof window === "undefined") return;
-  if (!config) {
-    localStorage.removeItem(STORAGE_KEY_CUSTOM_CONFIG);
-  } else {
-    localStorage.setItem(STORAGE_KEY_CUSTOM_CONFIG, JSON.stringify(config));
-  }
-  // reset cached singletons so new config initializes on next call
-  app = null;
-  db = null;
-  auth = null;
-  storage = null;
-}
-
-/** Returns true if Firebase keys are configured either in env or browser config */
+/** Returns true if Firebase keys are configured in environment variables */
 export function isFirebaseConfigured(): boolean {
   const cfg = getFirebaseConfig();
   return Boolean(cfg.apiKey && cfg.projectId);

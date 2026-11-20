@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Lock, Mail, Eye, EyeOff, ArrowRight, ShieldCheck, AlertCircle, Loader2 } from "lucide-react";
+import { Lock, Mail, Eye, EyeOff, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
 import { useAdminAuth } from "@/lib/firebase-auth";
 
 export default function AdminLoginPage() {
@@ -36,12 +36,6 @@ export default function AdminLoginPage() {
     } else {
       setError(res.error || "Authentication failed.");
     }
-  };
-
-  const handleFillDemo = () => {
-    setEmail("admin@mgmcet.ac.in");
-    setPassword("admin123");
-    setError(null);
   };
 
   return (
@@ -96,7 +90,7 @@ export default function AdminLoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@mgmcet.ac.in"
+                  placeholder="officer@mgmcet.ac.in"
                   required
                   className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-border bg-canvas/40 text-sm text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-600 focus:bg-surface transition-all"
                 />
@@ -168,26 +162,6 @@ export default function AdminLoginPage() {
               )}
             </button>
           </form>
-
-          {/* Quick Access Helper */}
-          <div className="mt-6 pt-5 border-t border-border">
-            <div className="bg-brand-50/70 border border-brand-200/60 rounded-xl p-3.5 text-center">
-              <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-brand-900">
-                <ShieldCheck className="h-4 w-4 text-brand-700" />
-                <span>Instant Evaluation Credentials</span>
-              </div>
-              <p className="text-[11px] text-ink-600 mt-1">
-                Click below to fill pre-configured administrator credentials for immediate access.
-              </p>
-              <button
-                type="button"
-                onClick={handleFillDemo}
-                className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface hover:bg-brand-100 text-brand-800 text-xs font-semibold border border-brand-300 shadow-2xs transition-colors cursor-pointer"
-              >
-                <span>Fill: admin@mgmcet.ac.in / admin123</span>
-              </button>
-            </div>
-          </div>
         </div>
 
         {/* Back Link */}

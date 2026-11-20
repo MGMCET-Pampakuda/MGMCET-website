@@ -453,7 +453,7 @@ export default function AdminMousPage({ onOpenMobileMenu = () => {} }: PageProps
                 }`}
               />
               <span className="text-ink-500 font-medium">
-                {isFbConnected ? "Cloud Sync: Active" : "Local Storage Mode"}
+                {isFbConnected ? "Cloud Sync: Active" : "Cloud Sync: Offline"}
               </span>
             </div>
           </div>

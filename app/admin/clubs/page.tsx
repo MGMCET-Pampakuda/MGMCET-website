@@ -301,7 +301,7 @@ export default function AdminClubsPage({ onOpenMobileMenu = () => {} }: PageProp
                     isFbConnected ? "bg-emerald-500" : "bg-amber-500"
                   }`}
                 />
-                {isFbConnected ? "Firestore Cloud Synced" : "Local Storage Mode"}
+                {isFbConnected ? "Firestore Cloud Synced" : "Firestore Offline"}
               </span>
             </div>
             <h1 className="font-heading font-extrabold text-h3 text-ink-900">
